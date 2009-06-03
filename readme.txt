@@ -2,7 +2,7 @@
 Prerequisites
 -------------
 
-To run Spyglass you need at least JRE 6.0
+To run iControl you need at least JRE 6.0
 
 Install instructions
 --------------------
