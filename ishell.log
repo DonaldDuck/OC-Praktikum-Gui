@@ -1,0 +1,1442 @@
+[DEBUG; gui.MainWindow::parseCommandLine] Parsing command line
+[INFO ; util.PropertiesHelper::reload] (Re-)Loading configuration from C:\Dokumente und Einstellungen\Johannes\Eigene Dateien\Uni\eclipse\sensorknoten\iShell.properties
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[serial_port]: [/dev/ttyS0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; ishell.be::a] Alle Knoten
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[socket_port]: [8472]
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aa@106fc94
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.I@7f5580
+[DEBUG; plugins.PluginManager::register] Registering plugin Wireless Monitor
+[DEBUG; plugins.PluginManager::register] Registering plugin Over the Air Programming
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.k@18330bf
+[DEBUG; plugins.PluginManager::register] Registering plugin Paketverlust
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.F@16917ee
+[DEBUG; plugins.PluginManager::register] Registering plugin Tradav Truck
+[DEBUG; plugins.PluginManager::register] Registering plugin RangeCheck
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bh@1d49247
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.ah@cf829d
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aA@1884a40
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.plugins.NanoRangeCheck.g@1c7e2da
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bo@caf6c1
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.J@10e35d5
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bs@1f03691
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[plugin_classpath]: [plugins/]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_classes]: [de.uniluebeck.itm.icontrol.PluginiControl2iShell]
+[DEBUG; plugins.PluginManager::a] Using plug-in classpath: plugins/
+[WARN ; plugins.PluginManager::a] Skipping plug-in class path entry: plugins
+[DEBUG; plugins.PluginManager::a] Trying to register plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell using the classloader (java.net.URLClassLoader@139e351)
+[DEBUG; plugins.PluginManager::register] Registering plugin de.uniluebeck.itm.icontrol.PluginiControl2iShell@94257f
+[DEBUG; plugins.PluginManager::a] Done. Registered plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 0 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[or32_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; gui.d::a] enableActins flashMode.completed
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Over the Air Programming, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Over the Air Programming, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Tradav Truck, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Paketverlust, result: -15
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Over the Air Programming, result: -14
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Paketverlust, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Over the Air Programming, result: -8
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to AudioPlugin, result: 6
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Paketverlust, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Tradav Truck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Paketverlust, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Graphical curves illustrator, result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Over the Air Programming, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Paketverlust, result: 25
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Tradav Truck, result: 21
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Paketverlust, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Tradav Truck, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Paketverlust, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Graphical curves illustrator, result: 6
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Over the Air Programming, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Nanotron RangeCheck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Paketverlust, result: -13
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Graphical curves illustrator, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to AudioPlugin, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Paketverlust, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Tradav Truck, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Paketverlust, result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Tradav Truck, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to iControl, result: -18
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Paketverlust, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Graphical curves illustrator, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Nanotron RangeCheck, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Messenger, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Paketverlust, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Tradav Truck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to RangeCheck, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to TimeProvider, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Paketverlust, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Graphical curves illustrator, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Nanotron RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Messenger, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Jpeg illustrator, result: 2
+[DEBUG; plugins.PluginManager::<init>] This is the serial monitor plug-in, activating it by default
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: ishell.aa@106fc94
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@106fc94, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@106fc94) to non-plugin d {}, returning -1
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_tabNumbers]: [Jpeg illustrator,0:iControl,0:Curve illustrator (Single Window),0:PirVisualizer,0:Over the Air Programming,0:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[active_plugins]: [Jpeg illustrator,0:iControl,1:Curve illustrator (Single Window),0:PirVisualizer,0:Over the Air Programming,0:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: de.uniluebeck.itm.icontrol.PluginiControl2iShell@94257f
+[DEBUG; gui.e::a] position = 1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@94257f for type 145, now got 1 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[INFO ; gui.MainWindow::changeConnectionType] Changing connection type to socket
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@106fc94, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@94257f for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to NullDevice
+[DEBUG; device.iSenseDevice::setISenseDevice] Setting device to ishell.bq@1be2893
+[DEBUG; device.d::registerListener] Added promiscous listener d {*Wrong Thread*}, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@106fc94, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@106fc94) to non-plugin d {*Wrong Thread*}, returning -1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@94257f for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to ishell.bq@1be2893
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; ishell.bq::b] Using socket port 8472 and address localhost
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Saving settings.
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@106fc94, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@94257f for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from ishell.bq@1be2893 to NullDevice
+[DEBUG; ishell.bq::a] Shutdown Socket connection
+[DEBUG; gui.J::inputChanged] Input changed: viewer: org.eclipse.jface.viewers.TableViewer@1eb904d, oldInput: null, input: null
+[WARN ; gui.J::inputChanged] No input available.
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Done.
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=1, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=0, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; gui.MainWindow::parseCommandLine] Parsing command line
+[INFO ; util.PropertiesHelper::reload] (Re-)Loading configuration from C:\Dokumente und Einstellungen\Johannes\Eigene Dateien\Uni\eclipse\sensorknoten\iShell.properties
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[serial_port]: [/dev/ttyS0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; ishell.be::a] Alle Knoten
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[socket_port]: [8472]
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aa@68c26c
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.I@955cd5
+[DEBUG; plugins.PluginManager::register] Registering plugin Wireless Monitor
+[DEBUG; plugins.PluginManager::register] Registering plugin Over the Air Programming
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.k@1fe8ce8
+[DEBUG; plugins.PluginManager::register] Registering plugin Paketverlust
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.F@149105b
+[DEBUG; plugins.PluginManager::register] Registering plugin Tradav Truck
+[DEBUG; plugins.PluginManager::register] Registering plugin RangeCheck
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bh@196f4b5
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.ah@19ba640
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aA@1bfc4fc
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.plugins.NanoRangeCheck.g@1fcc0a2
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bo@94257f
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.J@29c58e
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bs@691dee
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[plugin_classpath]: [plugins/]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_classes]: [de.uniluebeck.itm.icontrol.PluginiControl2iShell]
+[DEBUG; plugins.PluginManager::a] Using plug-in classpath: plugins/
+[WARN ; plugins.PluginManager::a] Skipping plug-in class path entry: plugins
+[DEBUG; plugins.PluginManager::a] Trying to register plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell using the classloader (java.net.URLClassLoader@b32ed4)
+[DEBUG; plugins.PluginManager::register] Registering plugin de.uniluebeck.itm.icontrol.PluginiControl2iShell@1568fb5
+[DEBUG; plugins.PluginManager::a] Done. Registered plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 0 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[or32_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; gui.d::a] enableActins flashMode.completed
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Curve illustrator (Single Window), result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Curve illustrator (Single Window), result: 15
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Jpeg illustrator, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Jpeg illustrator, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Curve illustrator (Single Window), result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Jpeg illustrator, result: 10
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Jpeg illustrator, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to RangeCheck, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Jpeg illustrator, result: 6
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Location Demo, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Jpeg illustrator, result: 6
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Location Demo, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Paketverlust, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Jpeg illustrator, result: 31
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to RangeCheck, result: 23
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Tradav Truck, result: 21
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Jpeg illustrator, result: 10
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Tradav Truck, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Jpeg illustrator, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Curve illustrator (Single Window), result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Jpeg illustrator, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to RangeCheck, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Paketverlust, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Location Demo, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Paketverlust, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Jpeg illustrator, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Location Demo, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Nanotron RangeCheck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Paketverlust, result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to RangeCheck, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Tradav Truck, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to iControl, result: -18
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Paketverlust, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to RangeCheck, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Tradav Truck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to TimeProvider, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Paketverlust, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Jpeg illustrator, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Messenger, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Nanotron RangeCheck, result: 1
+[DEBUG; plugins.PluginManager::<init>] This is the serial monitor plug-in, activating it by default
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: ishell.aa@68c26c
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@68c26c, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@68c26c) to non-plugin d {}, returning -1
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_tabNumbers]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,0:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[active_plugins]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,1:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: de.uniluebeck.itm.icontrol.PluginiControl2iShell@1568fb5
+[DEBUG; gui.e::a] position = 1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1568fb5 for type 145, now got 1 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[INFO ; gui.MainWindow::changeConnectionType] Changing connection type to socket
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@68c26c, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1568fb5 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to NullDevice
+[DEBUG; device.iSenseDevice::setISenseDevice] Setting device to ishell.bq@1db484d
+[DEBUG; device.d::registerListener] Added promiscous listener d {*Wrong Thread*}, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@68c26c, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@68c26c) to non-plugin d {*Wrong Thread*}, returning -1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1568fb5 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to ishell.bq@1db484d
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; ishell.bq::b] Using socket port 8472 and address localhost
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Saving settings.
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@68c26c, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1568fb5 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from ishell.bq@1db484d to NullDevice
+[DEBUG; ishell.bq::a] Shutdown Socket connection
+[DEBUG; gui.J::inputChanged] Input changed: viewer: org.eclipse.jface.viewers.TableViewer@e5355f, oldInput: null, input: null
+[WARN ; gui.J::inputChanged] No input available.
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Done.
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=1, Nanotron RangeCheck=0, RangeCheck=0, AudioPlugin=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=0, Nanotron RangeCheck=0, RangeCheck=0, AudioPlugin=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; gui.MainWindow::parseCommandLine] Parsing command line
+[INFO ; util.PropertiesHelper::reload] (Re-)Loading configuration from C:\Dokumente und Einstellungen\Johannes\Eigene Dateien\Uni\eclipse\sensorknoten\iShell.properties
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[serial_port]: [/dev/ttyS0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; ishell.be::a] Alle Knoten
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[socket_port]: [8472]
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aa@2bd3a
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.I@1329642
+[DEBUG; plugins.PluginManager::register] Registering plugin Wireless Monitor
+[DEBUG; plugins.PluginManager::register] Registering plugin Over the Air Programming
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.k@1a61172
+[DEBUG; plugins.PluginManager::register] Registering plugin Paketverlust
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.F@969c29
+[DEBUG; plugins.PluginManager::register] Registering plugin Tradav Truck
+[DEBUG; plugins.PluginManager::register] Registering plugin RangeCheck
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bh@6ed322
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.ah@1e78c96
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aA@bf053f
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.plugins.NanoRangeCheck.g@1fe8ce8
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bo@109ea96
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.J@83b1b
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bs@608760
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[plugin_classpath]: [plugins/]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_classes]: [de.uniluebeck.itm.icontrol.PluginiControl2iShell]
+[DEBUG; plugins.PluginManager::a] Using plug-in classpath: plugins/
+[WARN ; plugins.PluginManager::a] Skipping plug-in class path entry: plugins
+[DEBUG; plugins.PluginManager::a] Trying to register plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell using the classloader (java.net.URLClassLoader@d3c65d)
+[DEBUG; plugins.PluginManager::register] Registering plugin de.uniluebeck.itm.icontrol.PluginiControl2iShell@caf6c1
+[DEBUG; plugins.PluginManager::a] Done. Registered plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 0 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[or32_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; gui.d::a] enableActins flashMode.completed
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Paketverlust, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Paketverlust, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Messenger, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Nanotron RangeCheck, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Paketverlust, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Nanotron RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Paketverlust, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Nanotron RangeCheck, result: -7
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Messenger, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Nanotron RangeCheck, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Paketverlust, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to PirVisualizer, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Nanotron RangeCheck, result: 27
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Paketverlust, result: 25
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to PirVisualizer, result: 25
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to RangeCheck, result: 23
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Nanotron RangeCheck, result: 6
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Paketverlust, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to iControl, result: -21
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Paketverlust, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to iControl, result: -21
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Tradav Truck, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Paketverlust, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Nanotron RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Messenger, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Graphical curves illustrator, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Paketverlust, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to RangeCheck, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Tradav Truck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to TimeProvider, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Paketverlust, result: -15
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Nanotron RangeCheck, result: -13
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Location Demo, result: -11
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Graphical curves illustrator, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Paketverlust, result: -13
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Nanotron RangeCheck, result: -11
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Location Demo, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Graphical curves illustrator, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to AudioPlugin, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Paketverlust, result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to RangeCheck, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Tradav Truck, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to iControl, result: -18
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Paketverlust, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Nanotron RangeCheck, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Location Demo, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Curve illustrator (Single Window), result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Graphical curves illustrator, result: 3
+[DEBUG; plugins.PluginManager::<init>] This is the serial monitor plug-in, activating it by default
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: ishell.aa@2bd3a
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@2bd3a, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@2bd3a) to non-plugin d {}, returning -1
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_tabNumbers]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,0:Nanotron RangeCheck,0:RangeCheck,0:AudioPlugin,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[active_plugins]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,1:Nanotron RangeCheck,0:RangeCheck,0:AudioPlugin,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: de.uniluebeck.itm.icontrol.PluginiControl2iShell@caf6c1
+[DEBUG; gui.e::a] position = 1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@caf6c1 for type 145, now got 1 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[INFO ; gui.MainWindow::changeConnectionType] Changing connection type to socket
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@2bd3a, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@caf6c1 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to NullDevice
+[DEBUG; device.iSenseDevice::setISenseDevice] Setting device to ishell.bq@1926e90
+[DEBUG; device.d::registerListener] Added promiscous listener d {*Wrong Thread*}, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@2bd3a, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@2bd3a) to non-plugin d {*Wrong Thread*}, returning -1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@caf6c1 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to ishell.bq@1926e90
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; ishell.bq::b] Using socket port 8472 and address localhost
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Saving settings.
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@2bd3a, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@caf6c1 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from ishell.bq@1926e90 to NullDevice
+[DEBUG; ishell.bq::a] Shutdown Socket connection
+[DEBUG; gui.J::inputChanged] Input changed: viewer: org.eclipse.jface.viewers.TableViewer@4c71d2, oldInput: null, input: null
+[WARN ; gui.J::inputChanged] No input available.
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Done.
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=1, Nanotron RangeCheck=0, RangeCheck=0, AudioPlugin=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=0, Nanotron RangeCheck=0, RangeCheck=0, AudioPlugin=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; gui.MainWindow::parseCommandLine] Parsing command line
+[INFO ; util.PropertiesHelper::reload] (Re-)Loading configuration from C:\Dokumente und Einstellungen\Johannes\Eigene Dateien\Uni\eclipse\sensorknoten\iShell.properties
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[serial_port]: [/dev/ttyS0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; ishell.be::a] Alle Knoten
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[socket_port]: [8472]
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aa@1eec35
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.I@77ef83
+[DEBUG; plugins.PluginManager::register] Registering plugin Wireless Monitor
+[DEBUG; plugins.PluginManager::register] Registering plugin Over the Air Programming
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.k@18b8914
+[DEBUG; plugins.PluginManager::register] Registering plugin Paketverlust
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.F@cf829d
+[DEBUG; plugins.PluginManager::register] Registering plugin Tradav Truck
+[DEBUG; plugins.PluginManager::register] Registering plugin RangeCheck
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bh@19cd75a
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.ah@1fe8ce8
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aA@d4d66b
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.plugins.NanoRangeCheck.g@608760
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bo@1ce85c4
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.J@1b03c1a
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bs@139e351
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[plugin_classpath]: [plugins/]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_classes]: [de.uniluebeck.itm.icontrol.PluginiControl2iShell]
+[DEBUG; plugins.PluginManager::a] Using plug-in classpath: plugins/
+[WARN ; plugins.PluginManager::a] Skipping plug-in class path entry: plugins
+[DEBUG; plugins.PluginManager::a] Trying to register plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell using the classloader (java.net.URLClassLoader@94257f)
+[DEBUG; plugins.PluginManager::register] Registering plugin de.uniluebeck.itm.icontrol.PluginiControl2iShell@1cc5069
+[DEBUG; plugins.PluginManager::a] Done. Registered plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 0 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[or32_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; gui.d::a] enableActins flashMode.completed
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to iControl, result: -26
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to iControl, result: -28
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Over the Air Programming, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Over the Air Programming, result: -12
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Messenger, result: -10
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Over the Air Programming, result: -8
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Messenger, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Curve illustrator (Single Window), result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Over the Air Programming, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to iControl, result: -18
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Over the Air Programming, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to iControl, result: -21
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Wireless Monitor, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Over the Air Programming, result: -14
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Graphical curves illustrator, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Curve illustrator (Single Window), result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Over the Air Programming, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Wireless Monitor, result: -5
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to TimeProvider, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Over the Air Programming, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Wireless Monitor, result: -7
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to TimeProvider, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Over the Air Programming, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Wireless Monitor, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to RangeCheck, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to TimeProvider, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Over the Air Programming, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Wireless Monitor, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to TimeProvider, result: 9
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Over the Air Programming, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Graphical curves illustrator, result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Messenger, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Over the Air Programming, result: -5
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Graphical curves illustrator, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Messenger, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Over the Air Programming, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Graphical curves illustrator, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Messenger, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Jpeg illustrator, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Over the Air Programming, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Wireless Monitor, result: -7
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to PirVisualizer, result: -8
+[DEBUG; plugins.PluginManager::<init>] This is the serial monitor plug-in, activating it by default
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: ishell.aa@1eec35
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1eec35, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@1eec35) to non-plugin d {}, returning -1
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_tabNumbers]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,0:Nanotron RangeCheck,0:RangeCheck,0:AudioPlugin,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[active_plugins]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,1:Nanotron RangeCheck,0:RangeCheck,0:AudioPlugin,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: de.uniluebeck.itm.icontrol.PluginiControl2iShell@1cc5069
+[DEBUG; gui.e::a] position = 1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1cc5069 for type 145, now got 1 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[INFO ; gui.MainWindow::changeConnectionType] Changing connection type to socket
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1eec35, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1cc5069 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to NullDevice
+[DEBUG; device.iSenseDevice::setISenseDevice] Setting device to ishell.bq@354749
+[DEBUG; device.d::registerListener] Added promiscous listener d {*Wrong Thread*}, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1eec35, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@1eec35) to non-plugin d {*Wrong Thread*}, returning -1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1cc5069 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to ishell.bq@354749
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; ishell.bq::b] Using socket port 8472 and address localhost
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Saving settings.
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1eec35, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1cc5069 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from ishell.bq@354749 to NullDevice
+[DEBUG; ishell.bq::a] Shutdown Socket connection
+[DEBUG; gui.J::inputChanged] Input changed: viewer: org.eclipse.jface.viewers.TableViewer@61373f, oldInput: null, input: null
+[WARN ; gui.J::inputChanged] No input available.
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Done.
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=1, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, Over the Air Programming=0, PirVisualizer=0, iControl=0, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; gui.MainWindow::parseCommandLine] Parsing command line
+[INFO ; util.PropertiesHelper::reload] (Re-)Loading configuration from C:\Dokumente und Einstellungen\Johannes\Eigene Dateien\Uni\eclipse\sensorknoten\iShell.properties
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[serial_port]: [/dev/ttyS0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; ishell.be::a] Alle Knoten
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[socket_port]: [8472]
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aa@1e4853f
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.I@992bae
+[DEBUG; plugins.PluginManager::register] Registering plugin Wireless Monitor
+[DEBUG; plugins.PluginManager::register] Registering plugin Over the Air Programming
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.k@648016
+[DEBUG; plugins.PluginManager::register] Registering plugin Paketverlust
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.F@1a61172
+[DEBUG; plugins.PluginManager::register] Registering plugin Tradav Truck
+[DEBUG; plugins.PluginManager::register] Registering plugin RangeCheck
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bh@1e67e6a
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.ah@1758500
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aA@6ed322
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.plugins.NanoRangeCheck.g@c2ee15
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bo@1c7e2da
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.J@1fe571f
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bs@109ea96
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[plugin_classpath]: [plugins/]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_classes]: [de.uniluebeck.itm.icontrol.PluginiControl2iShell]
+[DEBUG; plugins.PluginManager::a] Using plug-in classpath: plugins/
+[WARN ; plugins.PluginManager::a] Skipping plug-in class path entry: plugins
+[DEBUG; plugins.PluginManager::a] Trying to register plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell using the classloader (java.net.URLClassLoader@d6b059)
+[DEBUG; plugins.PluginManager::register] Registering plugin de.uniluebeck.itm.icontrol.PluginiControl2iShell@1fcc0a2
+[DEBUG; plugins.PluginManager::a] Done. Registered plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 0 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[or32_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; gui.d::a] enableActins flashMode.completed
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Tradav Truck, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Tradav Truck, result: -19
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Paketverlust, result: -15
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Paketverlust, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Tradav Truck, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Paketverlust, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Tradav Truck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to PirVisualizer, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Paketverlust, result: -13
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to AudioPlugin, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Paketverlust, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to AudioPlugin, result: 13
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Curve illustrator (Single Window), result: 11
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Paketverlust, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Curve illustrator (Single Window), result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Nanotron RangeCheck, result: -7
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Paketverlust, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Curve illustrator (Single Window), result: 10
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Nanotron RangeCheck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Graphical curves illustrator, result: 6
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Paketverlust, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Curve illustrator (Single Window), result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Messenger, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Graphical curves illustrator, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Messenger, result: 10
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Paketverlust, result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Sequential, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Tradav Truck, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Messenger, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Paketverlust, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Nanotron RangeCheck, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Messenger, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Paketverlust, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Sequential, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to PirVisualizer, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Messenger, result: 28
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Paketverlust, result: 25
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Sequential, result: 22
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Tradav Truck, result: 21
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Wireless Monitor, result: 18
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Messenger, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Curve illustrator (Single Window), result: 9
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Graphical curves illustrator, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Jpeg illustrator, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Messenger, result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Paketverlust, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Sequential, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Wireless Monitor, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Tradav Truck, result: -9
+[DEBUG; plugins.PluginManager::<init>] This is the serial monitor plug-in, activating it by default
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: ishell.aa@1e4853f
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e4853f, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@1e4853f) to non-plugin d {}, returning -1
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_tabNumbers]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,0:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[active_plugins]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:Over the Air Programming,0:PirVisualizer,0:iControl,1:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: de.uniluebeck.itm.icontrol.PluginiControl2iShell@1fcc0a2
+[DEBUG; gui.e::a] position = 1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1fcc0a2 for type 145, now got 1 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[INFO ; gui.MainWindow::changeConnectionType] Changing connection type to socket
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e4853f, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1fcc0a2 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to NullDevice
+[DEBUG; device.iSenseDevice::setISenseDevice] Setting device to ishell.bq@1de45e2
+[DEBUG; device.d::registerListener] Added promiscous listener d {*Wrong Thread*}, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e4853f, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@1e4853f) to non-plugin d {*Wrong Thread*}, returning -1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1fcc0a2 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to ishell.bq@1de45e2
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; ishell.bq::b] Using socket port 8472 and address localhost
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Saving settings.
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e4853f, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@1fcc0a2 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from ishell.bq@1de45e2 to NullDevice
+[DEBUG; ishell.bq::a] Shutdown Socket connection
+[DEBUG; gui.J::inputChanged] Input changed: viewer: org.eclipse.jface.viewers.TableViewer@633d51, oldInput: null, input: null
+[WARN ; gui.J::inputChanged] No input available.
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Done.
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, PirVisualizer=0, Over the Air Programming=0, iControl=1, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, PirVisualizer=0, Over the Air Programming=0, iControl=0, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; gui.MainWindow::parseCommandLine] Parsing command line
+[INFO ; util.PropertiesHelper::reload] (Re-)Loading configuration from C:\Dokumente und Einstellungen\Johannes\Eigene Dateien\Uni\eclipse\sensorknoten\iShell.properties
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[serial_port]: [/dev/ttyS0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; ishell.be::a] Alle Knoten
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[socket_port]: [8472]
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aa@d85cc
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.I@1a12495
+[DEBUG; plugins.PluginManager::register] Registering plugin Wireless Monitor
+[DEBUG; plugins.PluginManager::register] Registering plugin Over the Air Programming
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.k@1884a40
+[DEBUG; plugins.PluginManager::register] Registering plugin Paketverlust
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.F@19cd75a
+[DEBUG; plugins.PluginManager::register] Registering plugin Tradav Truck
+[DEBUG; plugins.PluginManager::register] Registering plugin RangeCheck
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bh@149105b
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.ah@1d0d45b
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aA@125d06e
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.plugins.NanoRangeCheck.g@d3c65d
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bo@17aece8
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.J@1578aab
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bs@51127a
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[plugin_classpath]: [plugins/]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_classes]: [de.uniluebeck.itm.icontrol.PluginiControl2iShell]
+[DEBUG; plugins.PluginManager::a] Using plug-in classpath: plugins/
+[WARN ; plugins.PluginManager::a] Skipping plug-in class path entry: plugins
+[DEBUG; plugins.PluginManager::a] Trying to register plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell using the classloader (java.net.URLClassLoader@12bf892)
+[DEBUG; plugins.PluginManager::register] Registering plugin de.uniluebeck.itm.icontrol.PluginiControl2iShell@cf710e
+[DEBUG; plugins.PluginManager::a] Done. Registered plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 0 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[or32_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; gui.d::a] enableActins flashMode.completed
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Location Demo, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Location Demo, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to TimeProvider, result: 9
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to TimeProvider, result: -7
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Location Demo, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to TimeProvider, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Location Demo, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Messenger, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to TimeProvider, result: -17
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Messenger, result: -10
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Location Demo, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to TimeProvider, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Messenger, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Nanotron RangeCheck, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to TimeProvider, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Messenger, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Nanotron RangeCheck, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to TimeProvider, result: 21
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Tradav Truck, result: 21
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to TimeProvider, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Tradav Truck, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to iControl, result: -18
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to TimeProvider, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Messenger, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Paketverlust, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Paketverlust, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Messenger, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Over the Air Programming to Nanotron RangeCheck, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Paketverlust, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Messenger, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Location Demo, result: -5
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Curve illustrator (Single Window), result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Paketverlust, result: -15
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Messenger, result: -12
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Graphical curves illustrator, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Curve illustrator (Single Window), result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Paketverlust, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Messenger, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Graphical curves illustrator, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Location Demo, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Paketverlust, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to TimeProvider, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to RangeCheck, result: 1
+[DEBUG; plugins.PluginManager::<init>] This is the serial monitor plug-in, activating it by default
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: ishell.aa@d85cc
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@d85cc, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@d85cc) to non-plugin d {}, returning -1
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_tabNumbers]: [Jpeg illustrator,0:iControl,0:Curve illustrator (Single Window),0:PirVisualizer,0:Over the Air Programming,0:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[active_plugins]: [Jpeg illustrator,0:iControl,1:Curve illustrator (Single Window),0:PirVisualizer,0:Over the Air Programming,0:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: de.uniluebeck.itm.icontrol.PluginiControl2iShell@cf710e
+[DEBUG; gui.e::a] position = 1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@cf710e for type 145, now got 1 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[INFO ; gui.MainWindow::changeConnectionType] Changing connection type to socket
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@d85cc, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@cf710e for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to NullDevice
+[DEBUG; device.iSenseDevice::setISenseDevice] Setting device to ishell.bq@ab7165
+[DEBUG; device.d::registerListener] Added promiscous listener d {*Wrong Thread*}, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@d85cc, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@d85cc) to non-plugin d {*Wrong Thread*}, returning -1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@cf710e for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to ishell.bq@ab7165
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; ishell.bq::b] Using socket port 8472 and address localhost
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Saving settings.
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@d85cc, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@cf710e for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from ishell.bq@ab7165 to NullDevice
+[DEBUG; ishell.bq::a] Shutdown Socket connection
+[DEBUG; gui.J::inputChanged] Input changed: viewer: org.eclipse.jface.viewers.TableViewer@602b6b, oldInput: null, input: null
+[WARN ; gui.J::inputChanged] No input available.
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Done.
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, PirVisualizer=0, Over the Air Programming=0, iControl=1, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, PirVisualizer=0, Over the Air Programming=0, iControl=0, Nanotron RangeCheck=0, AudioPlugin=0, RangeCheck=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; gui.MainWindow::parseCommandLine] Parsing command line
+[INFO ; util.PropertiesHelper::reload] (Re-)Loading configuration from C:\Dokumente und Einstellungen\Johannes\Eigene Dateien\Uni\eclipse\sensorknoten\iShell.properties
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[serial_port]: [/dev/ttyS0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[debug_nodes]: [*]
+[DEBUG; ishell.be::a] Alle Knoten
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[socket_port]: [8472]
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aa@1e328e0
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.I@149d886
+[DEBUG; plugins.PluginManager::register] Registering plugin Wireless Monitor
+[DEBUG; plugins.PluginManager::register] Registering plugin Over the Air Programming
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.k@402af3
+[DEBUG; plugins.PluginManager::register] Registering plugin Paketverlust
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.F@31f2a7
+[DEBUG; plugins.PluginManager::register] Registering plugin Tradav Truck
+[DEBUG; plugins.PluginManager::register] Registering plugin RangeCheck
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bh@24c4a3
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.ah@1e9c82e
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.aA@1554d32
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.plugins.NanoRangeCheck.g@1855562
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bo@17e845a
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.J@12368df
+[DEBUG; plugins.PluginManager::register] Registering plugin ishell.bs@1ba0f36
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[plugin_classpath]: [plugins/]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_classes]: [de.uniluebeck.itm.icontrol.PluginiControl2iShell]
+[DEBUG; plugins.PluginManager::a] Using plug-in classpath: plugins/
+[WARN ; plugins.PluginManager::a] Skipping plug-in class path entry: plugins
+[DEBUG; plugins.PluginManager::a] Trying to register plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell using the classloader (java.net.URLClassLoader@1a19458)
+[DEBUG; plugins.PluginManager::register] Registering plugin de.uniluebeck.itm.icontrol.PluginiControl2iShell@11f23e5
+[DEBUG; plugins.PluginManager::a] Done. Registered plugin: de.uniluebeck.itm.icontrol.PluginiControl2iShell
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 0 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[or32_file]: []
+[DEBUG; util.PropertiesHelper::getProperty] Using default value for[bin_file]: []
+[DEBUG; gui.d::a] enableActins flashMode.completed
+[DEBUG; plugins.Plugin::compareTo] Comparing Location Demo to Over the Air Programming, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing iControl to Over the Air Programming, result: 26
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to Over the Air Programming, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Sequential to iControl, result: -22
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Over the Air Programming, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to iControl, result: -23
+[DEBUG; plugins.Plugin::compareTo] Comparing RangeCheck to Sequential, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Over the Air Programming, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to Sequential, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing TimeProvider to iControl, result: -21
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Over the Air Programming, result: -8
+[DEBUG; plugins.Plugin::compareTo] Comparing Graphical curves illustrator to Location Demo, result: -5
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Over the Air Programming, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing Nanotron RangeCheck to Location Demo, result: 2
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Over the Air Programming, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to Sequential, result: 4
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to iControl, result: -18
+[DEBUG; plugins.Plugin::compareTo] Comparing Wireless Monitor to TimeProvider, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Over the Air Programming, result: -12
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Location Demo, result: -9
+[DEBUG; plugins.Plugin::compareTo] Comparing Curve illustrator (Single Window) to Graphical curves illustrator, result: -4
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Over the Air Programming, result: -14
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Location Demo, result: -11
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Graphical curves illustrator, result: -6
+[DEBUG; plugins.Plugin::compareTo] Comparing AudioPlugin to Curve illustrator (Single Window), result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Over the Air Programming, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to Sequential, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Paketverlust to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Over the Air Programming, result: -5
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Location Demo, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Curve illustrator (Single Window), result: 7
+[DEBUG; plugins.Plugin::compareTo] Comparing Jpeg illustrator to Graphical curves illustrator, result: 3
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Over the Air Programming, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Location Demo, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Messenger to Nanotron RangeCheck, result: -1
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Over the Air Programming, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Sequential, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to RangeCheck, result: -2
+[DEBUG; plugins.Plugin::compareTo] Comparing PirVisualizer to Paketverlust, result: 8
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Over the Air Programming, result: 5
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Sequential, result: 1
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to Wireless Monitor, result: -3
+[DEBUG; plugins.Plugin::compareTo] Comparing Tradav Truck to TimeProvider, result: 9
+[DEBUG; plugins.PluginManager::<init>] This is the serial monitor plug-in, activating it by default
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: ishell.aa@1e328e0
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e328e0, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@1e328e0) to non-plugin d {}, returning -1
+[DEBUG; util.PropertiesHelper::getProperty] Read property[plugin_tabNumbers]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:PirVisualizer,0:Over the Air Programming,0:iControl,0:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; util.PropertiesHelper::getProperty] Read property[active_plugins]: [Jpeg illustrator,0:Curve illustrator (Single Window),0:PirVisualizer,0:Over the Air Programming,0:iControl,1:Nanotron RangeCheck,0:AudioPlugin,0:RangeCheck,0:Location Demo,0:Wireless Monitor,0:Paketverlust,0:Tradav Truck,0:TimeProvider,0:Graphical curves illustrator,0:Sequential,0:Messenger,0]
+[DEBUG; plugins.PluginManager::activatePlugin] Activating plug-in: de.uniluebeck.itm.icontrol.PluginiControl2iShell@11f23e5
+[DEBUG; gui.e::a] position = 1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@11f23e5 for type 145, now got 1 listeners
+[DEBUG; util.PropertiesHelper::getProperty] Read property[connection_type]: [socket]
+[INFO ; gui.MainWindow::changeConnectionType] Changing connection type to socket
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e328e0, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@11f23e5 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to NullDevice
+[DEBUG; device.iSenseDevice::setISenseDevice] Setting device to ishell.bq@1db5ec
+[DEBUG; device.d::registerListener] Added promiscous listener d {*Wrong Thread*}, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e328e0, already got 1 listeners
+[DEBUG; plugins.Plugin::compareTo] Comparing this(ishell.aa@1e328e0) to non-plugin d {*Wrong Thread*}, returning -1
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@11f23e5 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from NullDevice to ishell.bq@1db5ec
+[DEBUG; util.PropertiesHelper::getProperty] Read property[server_addr]: [localhost]
+[DEBUG; ishell.bq::b] Using socket port 8472 and address localhost
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; ishell.bq::b] Trying to connect to localhost:8472
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Saving settings.
+[WARN ; device.iSenseDevice::setISenseDevice] Supplied device is null. Using Null device
+[DEBUG; device.d::registerListener] Added promiscous listener ishell.aa@1e328e0, already got 0 listeners
+[DEBUG; device.d::registerListener] Added promiscous listener d {}, already got 1 listeners
+[DEBUG; device.d::registerListener] Created first listener set for type 145
+[DEBUG; device.d::registerListener] Added listener de.uniluebeck.itm.icontrol.PluginiControl2iShell@11f23e5 for type 145, now got 1 listeners
+[DEBUG; device.d::a] Copied 3 unique listeners from ishell.bq@1db5ec to NullDevice
+[DEBUG; ishell.bq::a] Shutdown Socket connection
+[DEBUG; gui.J::inputChanged] Input changed: viewer: org.eclipse.jface.viewers.TableViewer@ea5461, oldInput: null, input: null
+[WARN ; gui.J::inputChanged] No input available.
+[DEBUG; gui.MainWindow::handleShellCloseEvent] Done.
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, PirVisualizer=0, Over the Air Programming=0, iControl=1, Nanotron RangeCheck=0, RangeCheck=0, AudioPlugin=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}
+[DEBUG; plugins.PluginManager::savePlugins] {Jpeg illustrator=0, Curve illustrator (Single Window)=0, PirVisualizer=0, Over the Air Programming=0, iControl=0, Nanotron RangeCheck=0, RangeCheck=0, AudioPlugin=0, Location Demo=0, Wireless Monitor=0, Paketverlust=0, Tradav Truck=0, TimeProvider=0, Graphical curves illustrator=0, Sequential=0, Messenger=0}

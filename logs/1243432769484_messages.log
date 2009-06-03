@@ -1,0 +1,97 @@
+15:59:29  DEBUG    ConfigStore          - Initializing. Reading config from file: config\DefaultSpyglassConfigIShellPlugin.xml
+15:59:30 15:59:30   DEBUG  DEBUG      ConfigStorePlugin                        -  - Async-Store thread started.The PacketConsumerThread of the plug-in named 'default8hh started successfully.
+
+15:59:30 15:59:30   DEBUG  DEBUG      ConfigStorePlugin                        -  - Async-Store thread started.The PacketConsumerThread of the plug-in named 'default8hh started successfully.
+
+15:59:30  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'GlobalInformation started successfully.
+15:59:30  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default10 started successfully.
+15:59:30  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'NodePainter started successfully.
+15:59:30  DEBUG    PluginManager        - All plug-ins loaded and connected
+15:59:30  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default11 started successfully.
+15:59:30  DEBUG    PacketProducerTask   - New producer task.
+15:59:30  DEBUG    Spyglass             - Init done
+15:59:30  DEBUG    RulerArea            - Ruler resized...
+15:59:30  DEBUG    RulerArea            - Ruler moved...
+15:59:30  DEBUG    RulerArea            - Ruler resized...
+15:59:30  DEBUG    RulerArea            - Ruler moved...
+15:59:30  DEBUG    RulerArea            - Ruler resized...
+15:59:30  DEBUG    ToolbarHandler       - Created toolbar
+15:59:30  DEBUG    Spyglass             - Starting packetProducer Task
+15:59:30  INFO     PluginSpyGlass2iShell - Spyglass ready.
+15:59:30  DEBUG    PacketProducerTask   - Producer task staring.
+15:59:47  DEBUG    PluginSpyGlass2iShell - Terminating spyglass...
+15:59:47  DEBUG    UIController         - UIController shut down.
+15:59:47  DEBUG    ConfigStore          - Woke up, waiting another second.
+15:59:47  DEBUG    PacketProducerTask   - PacketReader has been interrupted, shutting down.
+15:59:47  DEBUG    PacketProducerTask   - PacketProducerTask ended. Done.
+15:59:47  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default8hh stopped.
+15:59:47  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'GlobalInformation stopped.
+15:59:47  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default10 stopped.
+15:59:47  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'NodePainter stopped.
+15:59:47  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default11 stopped.
+15:59:47  DEBUG    Spyglass             - All plugin-threads stopped
+15:59:47  INFO     PluginSpyGlass2iShell - SpyGlass end. Done.
+15:59:52  DEBUG    ConfigStore          - Initializing. Reading config from file: config\DefaultSpyglassConfigIShellPlugin.xml
+15:59:52  DEBUG    ConfigStore          - Async-Store thread started.
+15:59:52  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default8hh started successfully.
+15:59:52  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'GlobalInformation started successfully.
+15:59:52  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default10 started successfully.
+15:59:52  DEBUG    PluginManager        - All plug-ins loaded and connected
+15:59:52  DEBUG    PacketProducerTask   - New producer task.
+15:59:52  DEBUG    Spyglass             - Init done
+15:59:52  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default11 started successfully.
+15:59:52  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'NodePainter started successfully.
+15:59:52  DEBUG    RulerArea            - Ruler resized...
+15:59:52  DEBUG    RulerArea            - Ruler moved...
+15:59:52  DEBUG    RulerArea            - Ruler resized...
+15:59:52  DEBUG    RulerArea            - Ruler moved...
+15:59:52  DEBUG    RulerArea            - Ruler resized...
+15:59:52  DEBUG    ToolbarHandler       - Created toolbar
+15:59:52  DEBUG    Spyglass             - Starting packetProducer Task
+15:59:52  INFO     PluginSpyGlass2iShell - Spyglass ready.
+15:59:52  DEBUG    PacketProducerTask   - Producer task staring.
+15:59:53  DEBUG    PluginSpyGlass2iShell - Terminating spyglass...
+15:59:53  DEBUG    UIController         - UIController shut down.
+15:59:53  DEBUG    ConfigStore          - Woke up, waiting another second.
+15:59:53  DEBUG    PacketProducerTask   - PacketReader has been interrupted, shutting down.
+15:59:53  DEBUG    PacketProducerTask   - PacketProducerTask ended. Done.
+15:59:53  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default8hh stopped.
+15:59:53  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'GlobalInformation stopped.
+15:59:53  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default10 stopped.
+15:59:53  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'NodePainter stopped.
+15:59:53  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default11 stopped.
+15:59:53  DEBUG    Spyglass             - All plugin-threads stopped
+15:59:53  INFO     PluginSpyGlass2iShell - SpyGlass end. Done.
+16:02:16  DEBUG    ConfigStore          - Initializing. Reading config from file: config\DefaultSpyglassConfigIShellPlugin.xml
+16:02:16  DEBUG    ConfigStore          - Async-Store thread started.
+16:02:16  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default8hh started successfully.
+16:02:16  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'GlobalInformation started successfully.
+16:02:16  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default10 started successfully.
+16:02:16  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'NodePainter started successfully.
+16:02:16  DEBUG16:02:16      DEBUG  Plugin                PluginManager -       The PacketConsumerThread of the plug-in named 'default11 started successfully. 
+ - All plug-ins loaded and connected
+16:02:16  DEBUG    PacketProducerTask   - New producer task.
+16:02:16  DEBUG    Spyglass             - Init done
+16:02:16  DEBUG    RulerArea            - Ruler resized...
+16:02:16  DEBUG    RulerArea            - Ruler moved...
+16:02:16  DEBUG    RulerArea            - Ruler resized...
+16:02:16  DEBUG    RulerArea            - Ruler moved...
+16:02:16  DEBUG    RulerArea            - Ruler resized...
+16:02:16  DEBUG    ToolbarHandler       - Created toolbar
+16:02:16  DEBUG    Spyglass             - Starting packetProducer Task
+16:02:16  INFO     PluginSpyGlass2iShell - Spyglass ready.
+16:02:16  DEBUG    PacketProducerTask   - Producer task staring.
+16:02:18  DEBUG    RulerArea            - Ruler resized...
+16:02:18  DEBUG    RulerArea            - Ruler resized...
+16:02:34  DEBUG    PluginSpyGlass2iShell - Terminating spyglass...
+16:02:34  DEBUG    UIController         - UIController shut down.
+16:02:3416:02:34    DEBUGDEBUG        ConfigStorePacketProducerTask            -  - Woke up, waiting another second.PacketReader has been interrupted, shutting down.
+
+16:02:34  DEBUG    PacketProducerTask   - PacketProducerTask ended. Done.
+16:02:34  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default8hh stopped.
+16:02:34  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'GlobalInformation stopped.
+16:02:34  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default10 stopped.
+16:02:34  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'NodePainter stopped.
+16:02:34  DEBUG    Plugin               - The PacketConsumerThread of the plug-in named 'default11 stopped.
+16:02:34  DEBUG    Spyglass             - All plugin-threads stopped
+16:02:34  INFO     PluginSpyGlass2iShell - SpyGlass end. Done.

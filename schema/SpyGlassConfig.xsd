@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://xml.spyglass.itm.uniluebeck.de" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sg="http://xml.spyglass.itm.uniluebeck.de">
+	<element name="spyglassConfig" type="sg:SpyGlassType"></element>
+	<complexType name="SpyGlassType">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="general" type="sg:GeneralType" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="defaults" type="sg:PluginConfigType"
+				maxOccurs="unbounded" minOccurs="0">
+			</element>
+			<element name="instances" type="sg:PluginConfigType"
+				maxOccurs="unbounded" minOccurs="0">
+			</element>
+			<element name="inputConfig" type="sg:InputConfigType" maxOccurs="1" minOccurs="1"></element>
+			<element name="outputConfig" type="sg:OutputConfigType" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<!--
+	<complexType name="GridConfigType">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="lowerLeftX" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="lowerLeftY" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="rowCount" type="int" maxOccurs="1" minOccurs="1"></element>
+            <element name="rowHeight" type="int" maxOccurs="1" minOccurs="1"></element>
+            <element name="columnCount" type="int" maxOccurs="1" minOccurs="1"></element>
+            <element name="columnWidth" type="int" maxOccurs="1" minOccurs="1"></element>
+            <element name="lockRowsColumns" type="boolean" maxOccurs="1" minOccurs="1"></element>
+            <element name="lockWidthHeight" type="boolean" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType> -->
+	<complexType name="GeneralType">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="ruler" type="sg:GeneralRulerType" maxOccurs="1" minOccurs="1"></element>
+			<element name="metrics" type="sg:GeneralMetricsType" maxOccurs="1" minOccurs="1"></element>
+			<element name="time" type="sg:GeneralTimeType" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<complexType name="GeneralRulerType">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="show" type="boolean" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<complexType name="GeneralMetricsType">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="unit" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="abs2metricFactorX" type="float" maxOccurs="1" minOccurs="1"></element>
+			<element name="abs2metricFactorY" type="float" maxOccurs="1" minOccurs="1"></element>
+			<element name="abs2metricOffsetX" type="float" maxOccurs="1" minOccurs="1"></element>
+			<element name="abs2metricOffsetY" type="float" maxOccurs="1" minOccurs="1"></element>
+			<element name="lockAbs2metricFactor" type="boolean" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<complexType name="GeneralTimeType">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="unit" type="string" maxOccurs="1" minOccurs="1"></element>
+            <element name="scale" type="float" maxOccurs="1" minOccurs="1"></element>
+        </sequence>
+	</complexType>
+	<complexType name="PluginConfigType" abstract="true">
+		<sequence minOccurs="1" maxOccurs="1">
+			<element name="class" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="instanceName" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="visible" type="boolean" maxOccurs="1" minOccurs="1"></element>
+			<element name="active" type="boolean" maxOccurs="1" minOccurs="1"></element>
+			<element name="customConfigType" type="sg:PluginCustomConfigType" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="PluginCustomConfigType" abstract="true"></complexType>
+
+
+    <complexType name="SemanticTypeRegistrationType">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="registration"
+    			type="sg:SemanticTypeEnumType" maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="semanticTypes" type="int" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+	
+
+    <simpleType name="SemanticTypeEnumType">
+    	<restriction base="string">
+    		<enumeration value="all"></enumeration>
+    		<enumeration value="none"></enumeration>
+    		<enumeration value="list"></enumeration>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="RGBType">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="r" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="g" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="b" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="StringFormatterListType">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="semanticType" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="formatterString" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="InputConfigType">
+    	<choice maxOccurs="1" minOccurs="1">
+            <element name="source" type="sg:InputSourceEnumType" maxOccurs="1" minOccurs="1"></element>
+            <element name="filePath" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</choice>
+    </complexType>
+
+    <simpleType name="InputSourceEnumType">
+    	<restriction base="string">
+    		<enumeration value="FILE"></enumeration>
+    		<enumeration value="NETWORK"></enumeration>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="OutputConfigType">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="filePath" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>
