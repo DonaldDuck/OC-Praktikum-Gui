@@ -48,14 +48,14 @@ public class PluginiControl2iShell extends ishell.plugins.Plugin {
 		gateway.showMeWhatYouGot();
 
 		// Testeingaben, damit man was zu klicken hat
-		controller.onAction(123, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 0, 0 }, new String[][] {
-				{ "direction", "distance" }, {}, {} });
-		controller.onAction(124, 3, new String[] { "drive1", "gather1", "spread1" }, new int[] { 2, 0, 0 }, new String[][] {
-				{ "direction", "distance" }, {}, {} });
-		controller.onAction(125, 3, new String[] { "drive2", "gather2", "spread2" }, new int[] { 2, 0, 0 }, new String[][] {
-				{ "direction", "distance" }, {}, {} });
-		controller.onAction(126, 3, new String[] { "drive3", "gather3", "spread3" }, new int[] { 2, 0, 0 }, new String[][] {
-				{ "direction", "distance" }, {}, {} });
+//		controller.onAction(123, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 0, 0 }, new String[][] {
+//				{ "direction", "distance" }, {}, {} });
+//		controller.onAction(124, 3, new String[] { "drive1", "gather1", "spread1" }, new int[] { 2, 0, 0 }, new String[][] {
+//				{ "direction", "distance" }, {}, {} });
+//		controller.onAction(125, 3, new String[] { "drive2", "gather2", "spread2" }, new int[] { 2, 0, 0 }, new String[][] {
+//				{ "direction", "distance" }, {}, {} });
+//		controller.onAction(126, 3, new String[] { "drive3", "gather3", "spread3" }, new int[] { 2, 0, 0 }, new String[][] {
+//				{ "direction", "distance" }, {}, {} });
 
 		try {
 
