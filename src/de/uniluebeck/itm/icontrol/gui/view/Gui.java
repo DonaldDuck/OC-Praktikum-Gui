@@ -1,4 +1,5 @@
 package de.uniluebeck.itm.icontrol.gui.view;
+
 import java.util.LinkedList;
 
 import org.eclipse.swt.SWT;
@@ -8,6 +9,8 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
@@ -29,7 +32,8 @@ public class Gui implements Listener, SelectionListener {
 	private Composite container;
 	private Text text;
 	private Combo combo;
-	private CLabel name, text2;
+	private CLabel name, text2, battery;
+	private Image batteryImage;
 	private LinkedList<Button> buttonList;
 	private LinkedList<Text> textList;
 	private Group features, parameters;
@@ -51,7 +55,15 @@ public class Gui implements Listener, SelectionListener {
 		container.setLayout(new GridLayout(3, false));
 	    text2 = new CLabel(container, SWT.CENTER);
 	    text2.setText("Please wait, \ncollecting robot data!");
-	    text2.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true, 1, 1));	    
+	    text2.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true, 1, 1));
+	    try {
+	    	batteryImage = new Image(container.getDisplay(), Gui.class.getResourceAsStream("images/battery.png"));
+		} catch (Exception e) {
+			System.out.println("Exception " + e);
+			for (int i = 0; i < 20; i++)
+				System.out.println("Exception");
+		}
+		
 	}
 	
 	/**
@@ -78,6 +90,9 @@ public class Gui implements Listener, SelectionListener {
 	    
 	    features = new Group(container, SWT.SHADOW_ETCHED_IN);
 	    parameters = new Group(container, SWT.SHADOW_ETCHED_IN);
+	    battery = new CLabel(container, SWT.CENTER);
+	    //test
+	    updateBattery(75);
 	}
 	
 	/**
@@ -85,7 +100,8 @@ public class Gui implements Listener, SelectionListener {
 	 * the display switches to the new one, else that won't happen and the new
 	 * robot is only added to the dropdown menu.
 	 * NOTE: Should always called if the controller found a new robot.  
-	 * @param robotIds the ids of all currently known robots
+	 * @param robotIds
+	 * 					the ids of all currently known robots
 	 */
 	public void gotNewRobot(int[] robotIds){
 		for (int i = combo.getItemCount(); i < robotIds.length; i++){
@@ -105,7 +121,9 @@ public class Gui implements Listener, SelectionListener {
 	/**
 	 * It updates the <code>buttonList</code> with the given feature names.
 	 * NOTE: Should be called if another robot was selected for displaying. 
-	 * @param features the feature names of the displayed robot
+	 * 
+	 * @param features
+	 * 					the feature names of the displayed robot
 	 */
 	private void updateButtonList(String[] features){
 		buttonList = null;
@@ -132,6 +150,7 @@ public class Gui implements Listener, SelectionListener {
 	/**
 	 * Updates the displayed parameters to the ones of the current selected button.
 	 * NOTE: Should always be called if another button were selected.
+	 * 
 	 * @param parameters
 	 * @param featureToSelect
 	 */
@@ -161,7 +180,48 @@ public class Gui implements Listener, SelectionListener {
 	}
 	
 	/**
+	 * Draws a image of a battery with the given percentage and writes that
+	 * percentage in the battery. The following color encodings are used:
+	 * green: 100% <= charging level <= 30%
+	 * orange: 30% < charging level <= 10%
+	 * red: 10% < charging level <= 0%
+	 * non color: else 
+	 * 
+	 * @param percentage
+	 * 						the percentage how much the battery is charged 
+	 */
+	private void updateBattery(int percentage){
+		if (!battery.isDisposed())
+			this.battery.dispose();
+		CLabel label = new CLabel(container, SWT.CENTER );
+    	GC gc = new GC(batteryImage);
+    	int x = 17;
+    	if (percentage <= 100 && percentage >= 0){
+	    	if (percentage <= 100 && percentage >= 30){
+	    		if (percentage == 100)
+	    			x = 10;
+	    		gc.setBackground(new Color(container.getDisplay(), 128, 255, 64));
+	    	}else if (percentage < 30 && percentage >= 10){
+	    		gc.setBackground(new Color(container.getDisplay(), 255, 158, 64));
+	    	}else if (percentage < 10 && percentage > 0){
+	    		gc.setBackground(new Color(container.getDisplay(), 242, 10, 10));
+	    		x = 24;
+	    	}
+	    	gc.setForeground(container.getDisplay().getSystemColor(SWT.COLOR_BLACK));
+	    	gc.fillRectangle(2, 2, percentage/2, 20);
+	    	gc.drawString(percentage + "%", x, 4, true);
+    	}else{
+    		gc.setForeground(container.getDisplay().getSystemColor(SWT.COLOR_BLACK));
+	    	gc.drawString("--%", x, 4, true);
+    	}
+    	gc.dispose();
+    	label.setImage(batteryImage);
+    	this.battery = label;
+	}
+	
+	/**
 	 * Takes the by the user entered parameters and puts them into an <code>int[]</code>.
+	 * 
 	 * @return that <code>int[]</code>
 	 */
 	private int[] parseParameters(){
