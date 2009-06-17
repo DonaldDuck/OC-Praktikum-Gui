@@ -14,7 +14,7 @@ public class VRobot {
 	
 	/**
 	 * This value contains the unique robot id, which consists of four
-	 * hexadecimal values.
+	 * hexadecimal values (the last four digits of the robot's mac adress).
 	 */
 	private int id;
 	

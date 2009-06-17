@@ -1,5 +1,7 @@
 package de.uniluebeck.itm.icontrol.gui.view;
 
+//Lizenz
+
 import java.util.LinkedList;
 
 import org.eclipse.swt.SWT;
@@ -17,12 +19,10 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import de.uniluebeck.itm.icontrol.gui.controller.VController;
@@ -30,10 +30,10 @@ import de.uniluebeck.itm.icontrol.gui.controller.VController;
 public class Gui implements Listener, SelectionListener {
 	private VController controller;
 	private Composite container;
-	private Text text;
 	private Combo combo;
-	private CLabel name, text2, battery;
+	private CLabel name, text, battery;
 	private Image batteryImage;
+	private Image[] robotImages;
 	private LinkedList<Button> buttonList;
 	private LinkedList<Text> textList;
 	private Group features, parameters;
@@ -49,15 +49,21 @@ public class Gui implements Listener, SelectionListener {
 	
 	
 	/**
-	 * This method creates a single centered message on screen, that tells you to wait.
+	 * This method creates a single centered message on screen, that tells you
+	 * to wait and prepares running by loading images.
 	 */
 	private void init(){
 		container.setLayout(new GridLayout(3, false));
-	    text2 = new CLabel(container, SWT.CENTER);
-	    text2.setText("Please wait, \ncollecting robot data!");
-	    text2.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true, 1, 1));
+	    text = new CLabel(container, SWT.CENTER);
+	    text.setText("Please wait, \ncollecting robot data!");
+	    text.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true, 1, 1));
 	    try {
 	    	batteryImage = new Image(container.getDisplay(), Gui.class.getResourceAsStream("images/battery.png"));
+	    	robotImages = new Image[8];
+	    	for (int i = 1; i < robotImages.length/2 + 1; i++){
+	    		robotImages[2 * (i - 1)] = new Image(container.getDisplay(), Gui.class.getResourceAsStream("images/"+ i +"_off.png"));
+	    		robotImages[2 * i - 1] = new Image(container.getDisplay(), Gui.class.getResourceAsStream("images/"+ i +"_on.png"));
+	    	}
 		} catch (Exception e) {
 			System.out.println("Exception " + e);
 			for (int i = 0; i < 20; i++)
@@ -73,7 +79,7 @@ public class Gui implements Listener, SelectionListener {
 	 * --> if the first robot is added to the dropdown menu.
 	 */
 	public void run(){
-		text2.dispose();
+		text.dispose();
 		
 	    name = new CLabel(container, SWT.NONE);
 	    name.setFont(new Font(container.getDisplay(), new FontData("Sans Serif", 18, SWT.BOLD)));
@@ -152,7 +158,11 @@ public class Gui implements Listener, SelectionListener {
 	 * NOTE: Should always be called if another button were selected.
 	 * 
 	 * @param parameters
+	 * 							the names of all parameters in a <code>String[]</code>
 	 * @param featureToSelect
+	 * 							the number of the feature in the robot's
+	 * 							<code>featureList</code> for checking if the new
+	 * 							selection is already selected
 	 */
 	private void updateParameters(String[] parameters, int featureToSelect){
 		if (selectedFeature == featureToSelect)
@@ -195,15 +205,17 @@ public class Gui implements Listener, SelectionListener {
 			this.battery.dispose();
 		CLabel label = new CLabel(container, SWT.CENTER );
     	GC gc = new GC(batteryImage);
+    	gc.setBackground(new Color(container.getDisplay(), 128, 128, 128));
+    	gc.fillRectangle(2, 2, 50, 20);
     	int x = 17;
     	if (percentage <= 100 && percentage >= 0){
-	    	if (percentage <= 100 && percentage >= 30){
+	    	if (percentage >= 30){
 	    		if (percentage == 100)
 	    			x = 10;
 	    		gc.setBackground(new Color(container.getDisplay(), 128, 255, 64));
-	    	}else if (percentage < 30 && percentage >= 10){
+	    	}else if (percentage >= 10){
 	    		gc.setBackground(new Color(container.getDisplay(), 255, 158, 64));
-	    	}else if (percentage < 10 && percentage > 0){
+	    	}else{
 	    		gc.setBackground(new Color(container.getDisplay(), 242, 10, 10));
 	    		x = 24;
 	    	}
@@ -227,29 +239,58 @@ public class Gui implements Listener, SelectionListener {
 	private int[] parseParameters(){
 		int[] parsingResult = new int[textList.size()];
 		System.out.println("textList.size: " + textList.size());
+		boolean anythingWrong = false;
 		for(int i = 0; i < textList.size(); i++){
 			int parse = 0;
-			if (!textList.get(i).getText().equals(""))
+			try{
+				if (textList.get(i).getText().equals(""))
+					textList.get(i).setText("0");
 				parse = Integer.valueOf(textList.get(i).getText());
+				textList.get(i).setBackground(new Color(container.getDisplay(), 255, 255, 255));
+			}catch(NumberFormatException e){				
+				anythingWrong = true;
+				textList.get(i).setBackground(new Color(container.getDisplay(), 255, 84, 84));
+			}
+
 			parsingResult[i] = parse;
 			
 			System.out.println(parsingResult[i]);
 		}
-		return parsingResult;
+		if (!anythingWrong)
+			return parsingResult;
+		else
+			return null;
 	}
 
 	@Override
 	public void handleEvent(Event e) {
 		System.out.println("handleEvent");
 		if(e.type == SWT.Verify){
-			e.doit = e.text.matches("[^\\p{Alpha}\\p{Punct}]*");
+			e.doit = true;
+//			e.doit = true;
+//			Object source = e.widget;
+//			for (Text text: textList)
+//				if (source.equals(text)){
+//					try{
+//						Integer.parseInt(text.getText());
+//					}catch (NumberFormatException exception){
+//						if (text.getText().equals(""))
+//							return;	
+//						text.setBackground(new Color(container.getDisplay(), 255, 84, 84));
+//						return;
+//					}
+//					text.setBackground(new Color(container.getDisplay(), 255, 255, 255));
+//			}
+			
+			//e.doit = e.text.matches("[^\\p{Alpha}\\p{Punct}]*");
 			//e.doit = e.text.matches("[\\d\b]*");
 		}else if(e.type == SWT.Selection){
 			Object source = e.widget;
 			if (source.equals(button)){
-				int[] parsingResult = parseParameters();
-				if (parsingResult != null){
-					controller.doTask(buttonList.get(selectedFeature).getText(), parsingResult);
+				if (parseParameters() != null){
+//					for(int i = 0; i < 20; i++)
+//						System.out.println("Sending");
+					controller.doTask(buttonList.get(selectedFeature).getText(), parseParameters());
 				}
 			} else if(source.equals(combo)){
 				String[] split = name.getText().split("[ ]");
