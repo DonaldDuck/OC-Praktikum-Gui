@@ -5,6 +5,7 @@ package de.uniluebeck.itm.icontrol.gui.controller;
 import java.util.LinkedList;
 
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 
 import de.uniluebeck.itm.icontrol.PluginiControl2iShell;
 import de.uniluebeck.itm.icontrol.communication.listener.FeatureListener;
@@ -34,11 +35,14 @@ public class VController implements FeatureListener, MessageListener {
 	 * The list position of the currently displayed robot
 	 */
 	private int displayedRobot;
+	
+	private Display display;
 
 	private Gui gui;
 
 	public VController(final PluginiControl2iShell control, final Composite container) {
 		this.control = control;
+		this.display = container.getDisplay();
 		this.robotList = new LinkedList<VRobot>();
 		this.gui = new Gui(this, container);
 	}
@@ -88,7 +92,7 @@ public class VController implements FeatureListener, MessageListener {
 	 * @return all robots' ids in an <code>int[]</code>
 	 */
 	public int[] getAllRobotNames() {
-		final int[] thatNames = new int[robotList.size()];
+		int[] thatNames = new int[robotList.size()];
 		for (int i = 0; i < robotList.size(); i++) {
 			thatNames[i] = robotList.get(i).getId();
 		}
@@ -129,19 +133,47 @@ public class VController implements FeatureListener, MessageListener {
 
 	// FeatureListener
 	@Override
-	public void onAction(final int robotId, final int taskListLength, final String[] taskList, final int[] paramListLength, final String[][] paramList) {
+	public synchronized void onAction(final int robotId, final int taskListLength, final String[] taskList, final int[] paramListLength, final String[][] paramList) {
 		if (robotList.isEmpty()) {
 			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList));
-			// gui.setDisplayedRobot(Integer.toHexString(robotId).toUpperCase(), taskList);
-			gui.run();
+			if (Display.getCurrent() != null) {
+				gui.run();
+			} else {
+				if (!display.isDisposed()) {
+					display.asyncExec(new Runnable() {
+						public void run() {
+							if (display.isDisposed()) {
+								return;
+							}
+							gui.run();
+						}
+					});
+				}
+			}
 		}
 		// if the list is empty, add the robot, else check if the robot already exists. If he exists
 		// ignore the given features, else add him.
 		else if (robotInList(robotId) == -1) {
 			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList));
+		}else
+			return;
+		
+		if (Display.getCurrent() != null) {
+			gui.gotNewRobot(getAllRobotNames());
+		} else {
+			if (!display.isDisposed()) {
+				display.asyncExec(new Runnable() {
+					public void run() {
+						if (display.isDisposed()) {
+							return;
+						}
+						gui.gotNewRobot(getAllRobotNames());
+					}
+				});
+			}
 		}
-		gui.gotNewRobot(getAllRobotNames());
 	}
+	
 
 	// MessageListener
 	@Override

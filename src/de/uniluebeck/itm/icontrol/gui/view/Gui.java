@@ -290,6 +290,7 @@ public class Gui implements Listener, SelectionListener {
 				if (parseParameters() != null){
 //					for(int i = 0; i < 20; i++)
 //						System.out.println("Sending");
+					
 					controller.doTask(buttonList.get(selectedFeature).getText(), parseParameters());
 				}
 			} else if(source.equals(combo)){
