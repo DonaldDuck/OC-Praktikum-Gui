@@ -130,12 +130,22 @@ public class VController implements FeatureListener, MessageListener {
 		gui = null;
 		robotList = null;
 	}
+	
+	private int[] checkOnActionParamInput(String[][] paramList){
+		int [] length = new int[paramList.length];
+		for (int i = 0; i < paramList.length; i++)
+			length[i] = paramList[i].length;
+		return length;
+	}
 
 	// FeatureListener
+	// Annahme id = 0 ist in Ordnung, weil es die letzten 4 Stellen der MAC-Adresse sind
 	@Override
-	public synchronized void onAction(final int robotId, final int taskListLength, final String[] taskList, final int[] paramListLength, final String[][] paramList) {
+	public synchronized void onAction(int robotId, int taskListLength, String[] taskList, int[] paramListLength, String[][] paramList) {
 		if (robotList.isEmpty()) {
-			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList));
+			if (robotId < 0)
+				robotId = robotId * -1;
+			robotList.add(new VRobot(robotId, taskList.length, taskList, checkOnActionParamInput(paramList), paramList));
 			if (Display.getCurrent() != null) {
 				gui.run();
 			} else {
