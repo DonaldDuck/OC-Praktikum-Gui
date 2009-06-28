@@ -72,7 +72,18 @@ public class VController implements FeatureListener, MessageListener {
 	 */
 	public void setDisplayedRobot(final int id) {
 		displayedRobot = id;
-		// gui.updateRobot();
+	}
+	
+	public int[] getSensorsMinMax(String name) {
+		return robotList.get(robotInList(displayedRobot)).getSensorsMinMax(name);
+	}
+	
+	public boolean getContainsBattery() {
+		return robotList.get(robotInList(displayedRobot)).getContainsBattery();
+	}
+	
+	public String[] getAllSensorNames() {
+		return robotList.get(robotInList(displayedRobot)).getAllSensorNames();
 	}
 
 	/**
@@ -84,6 +95,24 @@ public class VController implements FeatureListener, MessageListener {
 	 */
 	public String[] getFeatureParameters(final int featureNumber) {
 		return robotList.get(robotInList(displayedRobot)).getFeatureParameters(featureNumber);
+	}
+	
+	/**
+	 * Calls <code>showMeWhatYouGot()</code> on the known gateway.
+	 */
+	public void showMeWhatYouGot(){
+		control.showMeWhatYouGot();
+	}
+	
+	/**
+	 * Returns the current value of the by its name given sensor of the currently
+	 * displayed robot
+	 * 
+	 * @param name the sensor's name
+	 * @return the sensor's current value
+	 */
+	public int getCurrentSensorValue(String name) {
+		return robotList.get(robotInList(displayedRobot)).getSensorValue(name);
 	}
 
 	/**
@@ -109,8 +138,7 @@ public class VController implements FeatureListener, MessageListener {
 	}
 
 	/**
-	 * Gives the chosen task to the communication gateway and sets this task in the
-	 * <code>VRobot</code> status
+	 * Gives the chosen task to the communication gateway
 	 * 
 	 * @param taskName
 	 *            the name of the chosen task
@@ -118,9 +146,30 @@ public class VController implements FeatureListener, MessageListener {
 	 *            the given parameters
 	 */
 	public void doTask(final String taskName, final int[] parameters) {
-		control.getGateway().doTask(robotInList(displayedRobot), taskName, parameters.length, parameters);
-		robotList.get(robotInList(displayedRobot)).setTask(taskName);
-		// gui.updateStatus();
+		control.getGateway().doTask(robotList.get(robotInList(displayedRobot)).getId(), taskName, parameters.length, parameters);
+	}
+	
+	public boolean[] getDisplayedSensors() {
+		return robotList.get(robotInList(displayedRobot)).getDisplayedSensors();
+	}
+	
+	public void setDisplayedSensors(boolean[] displayedSensors) {
+		robotList.get(robotInList(displayedRobot)).setDisplayedSensors(displayedSensors);
+		if (Display.getCurrent() != null) {
+			System.out.println("start gui");
+			gui.updateDisplayedSensors();
+		} else {
+			if (!display.isDisposed()) {
+				display.asyncExec(new Runnable() {
+					public void run() {
+						if (display.isDisposed()) {
+							return;
+						}
+						gui.updateDisplayedSensors();
+					}
+				});
+			}
+		}
 	}
 
 	/**
@@ -131,22 +180,18 @@ public class VController implements FeatureListener, MessageListener {
 		robotList = null;
 	}
 	
-	private int[] checkOnActionParamInput(String[][] paramList){
-		int [] length = new int[paramList.length];
-		for (int i = 0; i < paramList.length; i++)
-			length[i] = paramList[i].length;
-		return length;
-	}
-
 	// FeatureListener
-	// Annahme id = 0 ist in Ordnung, weil es die letzten 4 Stellen der MAC-Adresse sind
 	@Override
-	public synchronized void onAction(int robotId, int taskListLength, String[] taskList, int[] paramListLength, String[][] paramList) {
+	public synchronized void onAction(int robotId, int taskListLength, String[] taskList, int[] paramListLength, String[][] paramList, int sensorLength, String[] sensors, int[] sensorRange) {
+		System.out.println("onAction");
+		if (robotId < 0)
+			robotId = robotId * -1;
 		if (robotList.isEmpty()) {
-			if (robotId < 0)
-				robotId = robotId * -1;
-			robotList.add(new VRobot(robotId, taskList.length, taskList, checkOnActionParamInput(paramList), paramList));
+			System.out.println("empty");
+			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
+			System.out.println("added to list");
 			if (Display.getCurrent() != null) {
+				System.out.println("start gui");
 				gui.run();
 			} else {
 				if (!display.isDisposed()) {
@@ -164,10 +209,10 @@ public class VController implements FeatureListener, MessageListener {
 		// if the list is empty, add the robot, else check if the robot already exists. If he exists
 		// ignore the given features, else add him.
 		else if (robotInList(robotId) == -1) {
-			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList));
+			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
 		}else
 			return;
-		
+		System.out.println("call gotnewrobot");
 		if (Display.getCurrent() != null) {
 			gui.gotNewRobot(getAllRobotNames());
 		} else {
@@ -182,36 +227,27 @@ public class VController implements FeatureListener, MessageListener {
 				});
 			}
 		}
+		System.out.println("done");
 	}
 	
 
 	// MessageListener
 	@Override
 	public void onMessage(final int robotId, final String taskName, final int valueLength, final int[] values) {
-		if (taskName.equals("status")) {
-			final int position = robotInList(robotId);
-			if (position == -1) {
-				System.err.println("I don't know this robot!");
-			} else {
-				robotList.get(position).updateStatus(values);
-				if (position == displayedRobot) {
-					// gui.updateStatus
-					// remove if-{}
-				}
-			}
+		final int position = robotInList(robotId);
+		if (position == -1) {
+			System.err.println("I don't know this robot!");
+			return;
+		}
+		if (taskName.contains("sensor_")) {
+				robotList.get(position).updateSensor(taskName.replaceFirst("^sensor_", ""), values[0]);
 		} else if (taskName.equals("linkStatus")) {
-			final int position = robotInList(robotId);
-			if (position == -1) {
-				System.err.println("I don't know this robot!");
-			} else {
-				robotList.get(position).updateLinkStatus(values);
-				if (position == displayedRobot) {
-					// gui.updateLinkStatus
-					// remove if-{}
-				}
+			robotList.get(position).updateLinkStatus(values);
+			if (position == displayedRobot) {
+				// gui.updateLinkStatus
+				// remove if-{}
 			}
 		}
-
 	}
 
 }

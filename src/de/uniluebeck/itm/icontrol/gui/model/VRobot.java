@@ -19,19 +19,6 @@ public class VRobot {
 	private int id;
 	
 	/**
-	 * This array contains all status information:
-	 * 
-	 * status[0]: Information about the left bumper. The value is <code>1</code> if the bumper is pressed, else <code>0</code>
-	 * status[1]: Information about the right bumper. The value is <code>1</code> if the bumper is pressed, else <code>0</code>
-	 * status[2]: Information about the left wheel. The value is <code>1</code> if the wheel is released, else <code>0</code>
-	 * status[3]: Information about the right wheel. The value is <code>1</code> if the wheel is released, else <code>0</code>
-	 * status[4]: Percentage of the robot's battery. 
-	 * status[5]: Contains the position of the feature in <code>featureList</code>, which was last sent to the robot.
-	 * 
-	 */
-	private int[] status;
-	
-	/**
 	 * This array contains the current link quality to every other node in range.
 	 * linkStatus[2*n] (all even numbers) = ID
 	 * linkStatus[2*n+1] (all odd numbers) = corresponding link quality
@@ -43,15 +30,53 @@ public class VRobot {
 	 */
 	private LinkedList<VFeature> featureList;
 	
-	public VRobot(int robotId, int taskListLength, String[] taskList, int[] paramListLength, String[][] paramList){
+	/**
+	 * This list contains all sensors the robot has.
+	 */
+	private LinkedList<VSensor> sensorList;
+	
+	private boolean containsBattery = false;
+	
+	private VSensor battery;
+	
+	/**
+	 * Every <code>boolean</code> is true if the corresponding sensor (same order
+	 * as in <code>sensorList</code>) is currently displayed in the GUI. 
+	 */
+	private boolean[] displayedSensors;
+	
+	public VRobot(int robotId, int taskListLength, String[] taskList, int[] paramListLength, String[][] paramList, int sensorLength, String[] sensors, int[] sensorRange){
 		this.id = robotId;
-		this.status = new int[]{0,0,0,0,0,-1};
 		this.featureList = new LinkedList<VFeature>();
 		for (int i = 0; i < taskListLength; i++){
 			featureList.add(new VFeature(taskList[i], paramListLength[i], paramList[i]));
 		}
+		this.sensorList = new LinkedList<VSensor>();
+		for (int i = 0; i < sensorLength; i++){
+			if (sensors[i].equals("battery")) {
+				containsBattery = true;
+				battery = new VSensor(sensors[i], sensorRange[2*i], sensorRange[2*i+1]);
+			} else
+				sensorList.add(new VSensor(sensors[i], sensorRange[2*i], sensorRange[2*i+1]));
+		}
+		displayedSensors = new boolean[sensorList.size()];
+		for (int i = 0; i < sensorList.size(); i++){
+			displayedSensors[i] = true;
+		}
 	}
 	
+	public int[] getSensorsMinMax(String name) {
+		if (name.equals("battery") && containsBattery)
+			return new int[]{0, 100};
+		int[] range = new int[2];
+		range[0] = sensorList.get(getSensorNumber(name)).getMin();
+		range[1] = sensorList.get(getSensorNumber(name)).getMax();
+		return range;
+	}
+	
+	public boolean getContainsBattery() {
+		return containsBattery;
+	}
 	
 	/**
 	 * Returns all parameters to the given feature number in a <code>String[]</code>
@@ -71,13 +96,69 @@ public class VRobot {
 	}
 	
 	/**
+	 * Returns the position of the sensor corresponding to the given name in the <code>sensorList</code>
+	 * 
+	 * @param name the sensor's name
+	 * @return the sensor's position if the name is found, else -1
+	 */
+	public int getSensorNumber (String name) {
+		for (VSensor sensor : sensorList) {
+			if (sensor.getName().equals(name))
+				return sensorList.indexOf(sensor);
+		}
+		System.out.println("Sorry, I don't know the sensor " + name + "!");
+		return -1;
+	}
+	
+	/**
+	 * Returns the current value of the by its name given sensor 
+	 * 
+	 * @param name the sensor's name
+	 * @return the sensor's current value
+	 */
+	public int getSensorValue(String name) {
+		if (name.equals("battery") && containsBattery)
+			return battery.getCurrentValue();
+		return sensorList.get(getSensorNumber(name)).getCurrentValue();
+	}
+	
+	/**
+	 * Returns all by the robot supported sensors by their names
+	 * 
+	 * @return all sensor names
+	 */
+	public String[] getAllSensorNames() {
+		String[] names = new String[sensorList.size()];
+		for (int i = 0; i < sensorList.size(); i++)
+			names[i] = sensorList.get(i).getName();
+		return names;
+	}
+	
+	/**
+	 * Updates the value of the sensor with that given name by the given value 
+	 * @param name the sensor's name
+	 * @param currentValue the new value of that sensor
+	 */
+	public void updateSensor(String name, int currentValue) {
+		if (name.equals("battery") && containsBattery)
+			battery.setCurrentValue(currentValue);
+		int position = getSensorNumber(name);
+		if (position == -1) {
+			System.out.println("I don't know this sensor!");
+			return;
+		}
+		sensorList.get(position).setCurrentValue(currentValue);
+	}
+	
+	/**
 	 * Returns the position of the feature corresponding to the given name in the <code>featureList</code>
+	 * 
 	 * @param name the feature's name
 	 * @return the feature's position if the name is found, else -1
 	 */
 	public int getFeatureNumber(String name){
 		for (VFeature feature : featureList){
-			if (feature.getName() == name)
+			if (feature.getName().equals(name))
 				return featureList.indexOf(feature);
 		}
 		return -1;
@@ -95,35 +176,20 @@ public class VRobot {
 	}
 	
 	/**
-	 * Sets the current task of a robot in <code>status</code> using the
-	 * feature's position in the <code>featureList</code>. If the name isn't
-	 * found, -1 will be entered.
-	 *  
-	 * @param name the task's name
+	 * Returns the currently displayed sensors
+	 * @return <code>true</code> if the corresponding sensor is displayed
 	 */
-	public void setTask(String name){
-		for (VFeature feature : featureList){
-			if (feature.getName().equals(name))
-				status[5] = featureList.indexOf(feature);
-			else
-				status[5] = -1;
-		}
+	public boolean[] getDisplayedSensors() {
+		return displayedSensors;
 	}
 	
 	/**
-	 * Saves a new status to the private variable <code>status</code>
-	 * @param status the new status
+	 * Sets the currently displayed sensors and calls a refresh method on the GUI
+	 * @param displayedSensors
+	 * 					<code>true</code> if the corresponding sensor is displayed 
 	 */
-	public void updateStatus(int[] status){
-		this.status = status;
-	}
-	
-	/**
-	 * Returns the current status
-	 * @return the status
-	 */
-	public int[] getStatus(){
-		return status;
+	public void setDisplayedSensors(boolean[] displayedSensors) {
+		this.displayedSensors = displayedSensors;
 	}
 	
 	/**

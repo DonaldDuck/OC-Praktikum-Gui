@@ -203,7 +203,7 @@ public class Gateway implements Communication {
 			}
 		}
 		for (final FeatureListener listener : featureListener) {
-			listener.onAction(robotId, taskListLength, taskList, paramListLength, paramList);
+			//listener.onAction(robotId, taskListLength, taskList, paramListLength, paramList);
 		}
 	}
 
