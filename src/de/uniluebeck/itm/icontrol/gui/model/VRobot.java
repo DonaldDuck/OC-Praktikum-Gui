@@ -39,6 +39,8 @@ public class VRobot {
 	
 	private VSensor battery;
 	
+	private int health;
+	
 	/**
 	 * Every <code>boolean</code> is true if the corresponding sensor (same order
 	 * as in <code>sensorList</code>) is currently displayed in the GUI. 
@@ -76,6 +78,14 @@ public class VRobot {
 	
 	public boolean getContainsBattery() {
 		return containsBattery;
+	}
+	
+	public int getHealth() {
+		return health;
+	}
+	
+	public void setHealth(int health) {
+		this.health = health;
 	}
 	
 	/**

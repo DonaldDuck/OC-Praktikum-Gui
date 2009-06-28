@@ -78,7 +78,7 @@ public class Gui implements Listener, SelectionListener {
 		Composite center = new Composite(container, SWT.NONE);
 		GridLayout grid = new GridLayout(3, false);
 		grid.horizontalSpacing = 10;
-		center.setLayout(grid);
+		center.setLayout(new RowLayout(SWT.HORIZONTAL));
 		Composite bottom = new Composite(container, SWT.NONE);
 		bottom.setLayout(new RowLayout());
 	    name = new CLabel(top, SWT.NONE);
@@ -128,7 +128,8 @@ public class Gui implements Listener, SelectionListener {
 			timer = new Runnable() {
 		    	public void run() {
 		    		if (controller.getContainsBattery())
-		    			battery.update(controller.getCurrentSensorValue("battery"));
+		    			battery.update((int)(101 * Math.random()));
+//		    			battery.update(controller.getCurrentSensorValue("battery"));
 		    		if (!sensorDisplayList.isEmpty()) {
 			    		for (VSensorDisplay sensor : sensorDisplayList)
 			    			sensor.update();
