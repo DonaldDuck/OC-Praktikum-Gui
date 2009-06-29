@@ -1,5 +1,13 @@
 package de.uniluebeck.itm.icontrol;
 
+/* ----------------------------------------------------------------------
+ * This file is part of the WISEBED project.
+ * Copyright (C) 2009 by the Institute of Telematics, University of Luebeck
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the BSD License. Refer to bsd-licence.txt
+ * file in the root of the source tree for further details.
+ ------------------------------------------------------------------------*/
+
 import ishell.device.MessagePacket;
 import ishell.util.IconTheme;
 
@@ -13,7 +21,6 @@ import de.uniluebeck.itm.icontrol.gui.controller.VController;
 
 public class PluginiControl2iShell extends ishell.plugins.Plugin {
 
-	// Bitte hier Packet-Type aendern und unten receivePacket(MessagePacket arg0) ausfuellen!
 	private static final int ICONTROL_PACKET_TYPE = 10;
 
 	private Communication gateway;
@@ -32,7 +39,6 @@ public class PluginiControl2iShell extends ishell.plugins.Plugin {
 
 	@Override
 	public int[] init() {
-		// iShell init (called on each plug-in start)
 
 		final CTabItem tabItem = getTabItem(getName());
 		tabItem.setImage(IconTheme.lookup("network-wireless"));
@@ -58,8 +64,6 @@ public class PluginiControl2iShell extends ishell.plugins.Plugin {
 
 	@Override
 	public void shutdown() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

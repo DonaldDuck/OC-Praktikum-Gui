@@ -1,6 +1,12 @@
 package de.uniluebeck.itm.icontrol.gui.view;
 
-//Lizenz
+/* ----------------------------------------------------------------------
+* This file is part of the WISEBED project.
+* Copyright (C) 2009 by the Institute of Telematics, University of Luebeck
+* This is free software; you can redistribute it and/or modify it
+* under the terms of the BSD License. Refer to bsd-licence.txt
+* file in the root of the source tree for further details.
+------------------------------------------------------------------------*/
 
 import java.util.LinkedList;
 
@@ -29,7 +35,6 @@ import de.uniluebeck.itm.icontrol.gui.view.VSensorDisplay;
 
 public class Gui implements Listener, SelectionListener {
 	private VController controller;
-	private final boolean activated = true;
 	private Composite container, features, linkStatus, parameters, sensors;
 	private Combo combo;
 	private CLabel name, text;
@@ -37,10 +42,11 @@ public class Gui implements Listener, SelectionListener {
 	private LinkedList<Button> buttonList;
 	private LinkedList<Text> textList;
 	private LinkedList<VSensorDisplay> sensorDisplayList;
+	private LinkedList<CLabel> linkStatusList;
 	private Button button, searchButton, dialogButton;
 	private int selectedFeature = -1;
 	private VBatteryDisplay battery;
-	private final int time = 500;
+	private int time = 500;
 	private Runnable timer = null;
 	
 	public Gui(VController controller, Composite container){
@@ -119,11 +125,9 @@ public class Gui implements Listener, SelectionListener {
 	    button = new Button(bottom, SWT.PUSH);
 	    button.setText("Send Task!");
 	    button.addListener(SWT.Selection, this);
-	    
-	    combo.addListener(SWT.KeyUp, this);
 	}
 	
-	private void startSensorTimer() {
+	protected void startSensorTimer() {
 		if (timer == null) {
 			timer = new Runnable() {
 		    	public void run() {
@@ -139,6 +143,14 @@ public class Gui implements Listener, SelectionListener {
 		    };
 		}
 	    container.getDisplay().timerExec(time, timer);
+	}
+	
+	protected void setTime(int time) {
+		this.time = time;
+	}
+	
+	protected int getTime() {
+		return time;
 	}
 	
 	private void stopSensorTimer() {
@@ -179,7 +191,8 @@ public class Gui implements Listener, SelectionListener {
 		if(!linkStatus.isDisposed())
 			linkStatus.dispose();
 		linkStatus = new Composite(linkStatusGroup, SWT.NONE);
-		linkStatus.setLayout(new RowLayout(SWT.VERTICAL));
+		linkStatus.setLayout(new GridLayout(3, false));
+		
 		// for schleife, die jeden roboter hinzufuegt und ggf. alles neu macht bzw es duerfte reichen unten den neuen robot anzufuegen
 		// ich weiss noch nicht
 	}
@@ -307,28 +320,7 @@ public class Gui implements Listener, SelectionListener {
 //		System.out.println("handleEvent");
 //		if(e.type == SWT.Verify){
 //			e.doit = true;
-		if (activated && e.type == SWT.KeyUp){
-			System.out.print("ARROWACTION");
-			switch (e.keyCode){
-				case SWT.ARROW_LEFT:
-					System.out.println("left");
-					controller.doTask("turn", new int[]{42, 0});
-					break;
-				case SWT.ARROW_RIGHT:
-					System.out.println("right");
-					controller.doTask("turn", new int[]{-42, 0});
-					break;
-				case SWT.ARROW_UP:
-					System.out.println("up");
-					controller.doTask("drive", new int[]{500, 32768});
-					break;
-				case SWT.ARROW_DOWN:
-					System.out.println("down");
-					controller.doTask("drive", new int[]{-500, 32768});
-					break;
-			}
-			return;
-		} else if(e.type == SWT.Selection){
+		if(e.type == SWT.Selection){
 			Object source = e.widget;
 			if (source.equals(button)){
 				if (parseParameters() != null){
@@ -340,7 +332,8 @@ public class Gui implements Listener, SelectionListener {
 					return;
 				updateRobot(false);
 			} else if(source.equals(dialogButton)){
-				VSensorDialog dialog = new VSensorDialog(container, controller);
+				VSensorDialog dialog = new VSensorDialog(container, this, controller);
+				stopSensorTimer();
 				dialog.open();
 			} else if(source.equals(searchButton)){
 				searchButton.dispose();
