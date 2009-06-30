@@ -26,13 +26,6 @@ public class VRobot {
 	private int id;
 	
 	/**
-	 * This array contains the current link quality to every other node in range.
-	 * linkStatus[2*n] (all even numbers) = ID
-	 * linkStatus[2*n+1] (all odd numbers) = corresponding link quality
-	 */
-	private int[] linkStatus;
-	
-	/**
 	 * This list contains all features the robot supports.
 	 */
 	private LinkedList<VFeature> featureList;
@@ -207,22 +200,6 @@ public class VRobot {
 	 */
 	public void setDisplayedSensors(boolean[] displayedSensors) {
 		this.displayedSensors = displayedSensors;
-	}
-	
-	/**
-	 * Saves a new link status to the private variable <code>linkStatus</code>
-	 * @param linkStatus the new link status
-	 */
-	public void updateLinkStatus(int[] linkStatus){
-		this.linkStatus = linkStatus;
-	}
-	
-	/**
-	 * Returns the current link status
-	 * @return the link status
-	 */
-	public int[] getLinkStatus(){
-		return linkStatus;
 	}
 	
 	/**

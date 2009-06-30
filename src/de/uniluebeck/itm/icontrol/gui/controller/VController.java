@@ -16,6 +16,7 @@ import org.eclipse.swt.widgets.Display;
 import de.uniluebeck.itm.icontrol.PluginiControl2iShell;
 import de.uniluebeck.itm.icontrol.communication.listener.FeatureListener;
 import de.uniluebeck.itm.icontrol.communication.listener.MessageListener;
+import de.uniluebeck.itm.icontrol.gui.model.VLinkStatus;
 import de.uniluebeck.itm.icontrol.gui.model.VRobot;
 import de.uniluebeck.itm.icontrol.gui.view.Gui;
 
@@ -43,6 +44,8 @@ public class VController implements FeatureListener, MessageListener {
 	private int displayedRobot;
 	
 	private Display display;
+	
+	private VLinkStatus linkStatus;
 
 	private Gui gui;
 
@@ -50,6 +53,7 @@ public class VController implements FeatureListener, MessageListener {
 		this.control = control;
 		this.display = container.getDisplay();
 		this.robotList = new LinkedList<VRobot>();
+		this.linkStatus = new VLinkStatus();
 		this.gui = new Gui(this, container);
 	}
 
@@ -68,6 +72,10 @@ public class VController implements FeatureListener, MessageListener {
 			}
 		}
 		return -1;
+	}
+	
+	public int[] getLinkStatus() {
+		return linkStatus.getLinkStatus(displayedRobot);
 	}
 
 	/**
@@ -194,8 +202,9 @@ public class VController implements FeatureListener, MessageListener {
 			robotId = robotId * -1;
 		if (robotList.isEmpty()) {
 			System.out.println("empty");
-			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
+			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));			
 			System.out.println("added to list");
+			linkStatus.addRobot(robotId);
 			if (Display.getCurrent() != null) {
 				System.out.println("start gui");
 				gui.run();
@@ -216,6 +225,7 @@ public class VController implements FeatureListener, MessageListener {
 		// ignore the given features, else add him.
 		else if (robotInList(robotId) == -1) {
 			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
+			linkStatus.addRobot(robotId);
 		}else
 			return;
 		System.out.println("call gotnewrobot");
@@ -248,8 +258,8 @@ public class VController implements FeatureListener, MessageListener {
 		if (taskName.contains("sensor_")) {
 				robotList.get(position).updateSensor(taskName.replaceFirst("^sensor_", ""), values[0]);
 		} else if (taskName.equals("linkStatus")) {
-			robotList.get(position).updateLinkStatus(values);
-			if (position == displayedRobot) {
+			//linkStatus.setLinkStatus(robotId, robotId2, linkStatus);
+			if (robotId == displayedRobot) {
 				// gui.updateLinkStatus
 				// remove if-{}
 			}
