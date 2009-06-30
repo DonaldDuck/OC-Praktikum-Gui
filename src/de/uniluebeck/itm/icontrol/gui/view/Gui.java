@@ -42,7 +42,6 @@ public class Gui implements Listener, SelectionListener {
 	private LinkedList<Button> buttonList;
 	private LinkedList<Text> textList;
 	private LinkedList<VSensorDisplay> sensorDisplayList;
-	private LinkedList<CLabel> linkStatusList;
 	private Button button, searchButton, dialogButton;
 	private int selectedFeature = -1;
 	private VBatteryDisplay battery;
@@ -60,7 +59,7 @@ public class Gui implements Listener, SelectionListener {
 	/**
 	 * This method creates first a single button for searching. After clicking
 	 * a single centered message appears on the screen ,that tells you to
-	 * wait and prepares running by loading images.
+	 * wait.
 	 */
 	private void init(){
 		container.setLayout(new GridLayout(3, false));
