@@ -43,7 +43,7 @@ public class VSensorDisplay {
 		// set name
 		//-------------------------------------------------------------------------
 		this.nameLabel = new CLabel(container, SWT.CENTER | SWT.NONE);
-		this.nameLabel.setText(name + ":");
+		this.nameLabel.setText(this.name + ":");
 		this.nameLabel.setToolTipText("maximum value: " + max + "\nminimum value: " + min);
 		
 		// create description image
@@ -107,7 +107,7 @@ public class VSensorDisplay {
     	for (int i = 1; i < 4; i++)
     		gc2.drawLine(0, i*10, 39, i*10);
     	gc2.setForeground(new Color(container.getDisplay(), 51, 204, 255));
-    	// center that by changing 0 to ??
+    	// center that by changing 14 to ??
 		gc2.drawString("" + currentValue, 14, 12, true);
 		gc2.dispose();
 		currentValueLabel.redraw();

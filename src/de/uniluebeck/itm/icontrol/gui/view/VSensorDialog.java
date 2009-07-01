@@ -44,16 +44,19 @@ public class VSensorDialog extends Dialog implements Listener{
 	
 	
 	public void open() {
-		System.out.println("1");
 		oldConfig = controller.getDisplayedSensors();
 		newConfig = oldConfig;
 		String[] sensorNames = controller.getAllSensorNames();
 		shell = new Shell(getParent(), getStyle());
 		shell.setText("Change sensor configuration!");
-		shell.setLayout(new RowLayout(SWT.VERTICAL));
+		RowLayout rowLayout2 = new RowLayout(SWT.VERTICAL);
+		rowLayout2.fill = true;
+		shell.setLayout(rowLayout2);
 		
 		Group group2 = new Group(shell, SWT.SHADOW_ETCHED_IN);
-		group2.setLayout(new RowLayout(SWT.HORIZONTAL));
+		RowLayout rowLayout3 = new RowLayout(SWT.VERTICAL);
+		rowLayout3.fill = true;
+		group2.setLayout(rowLayout3);
 		group2.setText("Set refresh time (in ms)");
 		text = new Text(group2, SWT.BORDER);
 		oldTime = gui.getTime();
@@ -73,7 +76,9 @@ public class VSensorDialog extends Dialog implements Listener{
 			buttonList.add(b);
 		}
 		Composite container = new Composite(shell, SWT.NONE);
-		container.setLayout(new RowLayout());
+		RowLayout rowLayout = new RowLayout();
+		rowLayout.pack = false;
+		container.setLayout(rowLayout);
 	    cancel = new Button(container, SWT.PUSH);
 	    cancel.setText("Cancel");
 	    ok = new Button(container, SWT.PUSH);
@@ -94,6 +99,7 @@ public class VSensorDialog extends Dialog implements Listener{
 
 	@Override
 	public void handleEvent(Event e) {
+		System.out.println("event");
 		if (activated && e.type == SWT.KeyUp){
 			switch (e.keyCode){
 				case SWT.ARROW_LEFT:
@@ -123,14 +129,18 @@ public class VSensorDialog extends Dialog implements Listener{
 			if (parse <= 0)
 				parse = 1;
 			text.setBackground(new Color(shell.getDisplay(), 255, 255, 255));
-			gui.setTime(parse);
 		}catch(NumberFormatException exception){				
 			text.setBackground(new Color(shell.getDisplay(), 255, 84, 84));
 			return;
 		}
 		Object source = e.widget;
-		if (source.equals(ok)){
+		if (source.equals(cancel)) {
+			System.out.println("cancel");
+			shell.dispose();
+			return;
+		}else if (source.equals(ok)){
 			System.out.println("Button ok");
+			gui.setTime(parse);
 			for (int i = 0; i < buttonList.size(); i++) {
         		if (buttonList.get(i).getSelection())
         			newConfig[i] = true;
@@ -141,7 +151,6 @@ public class VSensorDialog extends Dialog implements Listener{
 				controller.setDisplayedSensors(newConfig);
 		}
 		shell.dispose();
-		gui.startSensorTimer();
 	}
 	
 }

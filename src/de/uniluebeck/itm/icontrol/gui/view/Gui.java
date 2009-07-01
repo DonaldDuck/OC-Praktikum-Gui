@@ -107,7 +107,9 @@ public class Gui implements Listener, SelectionListener {
 	    
 	    controlGroup = new Group(center, SWT.SHADOW_ETCHED_IN);
 	    controlGroup.setText("Control");
-	    controlGroup.setLayout(new RowLayout(SWT.VERTICAL));
+	    RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
+	    rowLayout.fill = true;
+	    controlGroup.setLayout(rowLayout);
 	    featuresGroup = new Group(controlGroup, SWT.SHADOW_ETCHED_IN);
 		featuresGroup.setText("Choose action:");
 		featuresGroup.setLayout(new GridLayout(1, false));
@@ -126,6 +128,9 @@ public class Gui implements Listener, SelectionListener {
 	    button.addListener(SWT.Selection, this);
 	}
 	
+	/**
+	 * Starts the timer, that refreshes the sensor devolution's.
+	 */
 	protected void startSensorTimer() {
 		if (timer == null) {
 			timer = new Runnable() {
@@ -246,6 +251,7 @@ public class Gui implements Listener, SelectionListener {
 			label.setText("There aren't any parameters!");
 			parametersGroup.redraw();
 			this.container.layout(true, true);
+			textList = new LinkedList<Text>();
 			return;
 		}
 		textList = new LinkedList<Text>();
@@ -272,6 +278,15 @@ public class Gui implements Listener, SelectionListener {
 		sensors.setLayout(new GridLayout(3, false));
 		sensorDisplayList = new LinkedList<VSensorDisplay>();
 		boolean[] displayed = controller.getDisplayedSensors();
+		boolean anySensor = false;
+		for (int i = 0; i < displayed.length; i++) {
+			if (displayed[i])
+				anySensor = true;
+		}
+		if (anySensor)
+			sensorGroup.setVisible(true);
+		else
+			sensorGroup.setVisible(false);
 		String[] sensorNames = controller.getAllSensorNames();
 		for (int i = 0; i < displayed.length; i++){
 			if (displayed[i]){
@@ -290,6 +305,8 @@ public class Gui implements Listener, SelectionListener {
 	 * @return that <code>int[]</code>
 	 */
 	private int[] parseParameters(){
+		if (textList.isEmpty())
+			return new int[]{};
 		int[] parsingResult = new int[textList.size()];
 		System.out.println("textList.size: " + textList.size());
 		boolean anythingWrong = false;
@@ -335,6 +352,7 @@ public class Gui implements Listener, SelectionListener {
 				VSensorDialog dialog = new VSensorDialog(container, this, controller);
 				stopSensorTimer();
 				dialog.open();
+				startSensorTimer();
 			} else if(source.equals(searchButton)){
 				searchButton.dispose();
 				text = new CLabel(container, SWT.CENTER);
