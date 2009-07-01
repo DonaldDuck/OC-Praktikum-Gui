@@ -45,6 +45,7 @@ public class Gui implements Listener, SelectionListener {
 	private Button button, searchButton, dialogButton;
 	private int selectedFeature = -1;
 	private VBatteryDisplay battery;
+	private VLinkStatusDisplay linkStatusDisplay;
 	private int time = 500;
 	private Runnable timer = null;
 	
@@ -86,6 +87,7 @@ public class Gui implements Listener, SelectionListener {
 		center.setLayout(new RowLayout(SWT.HORIZONTAL));
 		Composite bottom = new Composite(container, SWT.NONE);
 		bottom.setLayout(new RowLayout());
+		bottom.setLayoutData(new GridData(SWT.RIGHT, SWT.BOTTOM, true, true, 1, 1));
 	    name = new CLabel(top, SWT.NONE);
 	    name.setFont(new Font(top.getDisplay(), new FontData("Sans Serif", 18, SWT.BOLD)));
 	    name.setForeground(new Color(null, 0x66, 0x66, 0x66));
@@ -96,9 +98,7 @@ public class Gui implements Listener, SelectionListener {
 	    linkStatusGroup.setText("Link Status and Health");
 	    linkStatusGroup.setLayout(new RowLayout(SWT.VERTICAL));
 	    linkStatus = new Composite(linkStatusGroup, SWT.NONE);
-	    linkStatus.setLayout(new RowLayout(SWT.VERTICAL));
-	    CLabel label = new CLabel(linkStatus, SWT.NONE);
-	    label.setText("1234: 100% ____");
+	    linkStatusDisplay = new VLinkStatusDisplay(linkStatus);
 	    
 	    sensorGroup = new Group(center, SWT.SHADOW_ETCHED_IN);    
 	    sensorGroup.setText("Sensors");
@@ -168,6 +168,8 @@ public class Gui implements Listener, SelectionListener {
 		for (int i = combo.getItemCount(); i < robotIds.length; i++){
 			combo.add("" + robotIds[i]);
 			combo.addListener(SWT.Selection, this);
+			linkStatusDisplay.addRobot(robotIds[i]);
+			//linkStatusDisplay.refreshLinkStatus(controller.getLinkStatus());
 		}
 		if (combo.getSelectionIndex() == -1){
 			combo.select(0);
@@ -179,21 +181,20 @@ public class Gui implements Listener, SelectionListener {
 	private void updateRobot(boolean firstTime) {
 		if (!firstTime)
 			stopSensorTimer();
-		controller.setDisplayedRobot(Integer.valueOf(combo.getItem(combo.getSelectionIndex())));
+		int robotId = Integer.valueOf(combo.getItem(combo.getSelectionIndex()));
+		controller.setDisplayedRobot(robotId);
 		name.setText("iRobot: " + combo.getItem(combo.getSelectionIndex()));
 		updateButtonList(controller.getAllFeaturesNames());
 		updateDisplayedSensors();
 		startSensorTimer();
 	}
 	
-	public void updateLinkStatus() {
-		if(!linkStatus.isDisposed())
-			linkStatus.dispose();
-		linkStatus = new Composite(linkStatusGroup, SWT.NONE);
-		linkStatus.setLayout(new GridLayout(3, false));
-		
-		// for schleife, die jeden roboter hinzufuegt und ggf. alles neu macht bzw es duerfte reichen unten den neuen robot anzufuegen
-		// ich weiss noch nicht
+	public void updateLinkStatus(int[] linkStatus) {
+		this.linkStatusDisplay.refreshLinkStatus(linkStatus);
+	}
+	
+	public void updateHealthStatus(int[] health) {
+		this.linkStatusDisplay.refreshAllHealthIcons(health);
 	}
 	
 	/**

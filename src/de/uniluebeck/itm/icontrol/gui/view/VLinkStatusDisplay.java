@@ -30,13 +30,20 @@ public class VLinkStatusDisplay {
 		this.container = container;
 		linkStatusImages = new Image[3];
 	    try {
-			linkStatusImages[0] = new Image(container.getDisplay(), Gui.class.getResourceAsStream("images/health_red.png"));
-			linkStatusImages[1] = new Image(container.getDisplay(), Gui.class.getResourceAsStream("images/health_orange.png"));
-			linkStatusImages[2] = new Image(container.getDisplay(), Gui.class.getResourceAsStream("images/health_green.png"));
+			linkStatusImages[0] = new Image(container.getDisplay(), VLinkStatusDisplay.class.getResourceAsStream("images/health_red.png"));
+			linkStatusImages[1] = new Image(container.getDisplay(), VLinkStatusDisplay.class.getResourceAsStream("images/health_orange.png"));
+			linkStatusImages[2] = new Image(container.getDisplay(), VLinkStatusDisplay.class.getResourceAsStream("images/health_green.png"));
 		} catch (Exception e) {}
 		container.setLayout(new GridLayout(3, false));
 		healthIconList = new LinkedList<CLabel>();
 		linkStatus = new LinkedList<CLabel>();
+	}
+	
+	public void refreshAllHealthIcons(int[] health) {
+		if (health.length > this.healthIconList.size() || health == null)
+			return;
+		for (int i = 0; i < health.length; i++)
+			this.healthIconList.get(i).setImage(linkStatusImages[health[i]]);
 	}
 	
 	public void refreshHealthIcon(int robotPosition, int health) {
@@ -45,7 +52,7 @@ public class VLinkStatusDisplay {
 	}
 	
 	public void refreshLinkStatus(int[] linkStatus) {
-		if (linkStatus.length > this.linkStatus.size())
+		if (linkStatus.length > this.linkStatus.size() || linkStatus == null)
 			return;
 		for (int i = 0; i < linkStatus.length; i++)
 			this.linkStatus.get(i).setText(linkStatus[i] + "%");
@@ -54,12 +61,13 @@ public class VLinkStatusDisplay {
 	
 	public void addRobot(int robotId) {
 		CLabel label = new CLabel(container, SWT.NONE);
-		label.setText("" + robotId);
+		label.setText(robotId + ": ");
 		CLabel label2 = new CLabel(container, SWT.NONE);
 		label2.setText("n.a.");
 		linkStatus.add(label2);
 		CLabel label3 = new CLabel(container, SWT.NONE);
 		label3.setImage(linkStatusImages[2]);
 		healthIconList.add(label3);
+		System.out.println("VLinkStatusDisplay: set " + robotId + "and other stuff by addRobot");
 	}
 }

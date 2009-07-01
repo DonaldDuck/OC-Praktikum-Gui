@@ -16,15 +16,19 @@ public class VLinkStatus {
 	
 	private Vector<Integer> robotList;
 	
+	private Vector<Integer> health;
+	
 	public VLinkStatus() {
 		linkStatus = new Vector<Vector<Integer>>(0, 1);
 		robotList = new Vector<Integer>(0,1);
+		health = new Vector<Integer>(0,1);
 	}
 	
 	public void addRobot(int robotId) {
 		if (robotPosition(robotId) != -1)
 			return;
 		robotList.add(new Integer(robotId));
+		health.add(new Integer(2));
 		
 		linkStatus.add(new Vector<Integer>(0, 1));
 		for (int i = 0; i < robotList.size()-1; i++)
@@ -35,7 +39,7 @@ public class VLinkStatus {
 			else
 				linkStatus.get(i).add(new Integer(-1));
 		}
-		System.out.println("added " + robotId);
+		System.out.println("added " + robotId + " and set health to 2!");
 	}
 	
 	public void setLinkStatus(int robotId, int robotId2, int linkStatus) {
@@ -53,6 +57,20 @@ public class VLinkStatus {
 				return i;
 		}
 		return -1;
+	}
+	
+	public void setHealth(int robotId, int health) {
+		int position = robotPosition(robotId);
+		if (position == -1)
+			return;
+		this.health.set(position, new Integer(health));
+	}
+	
+	public int[] getHealth() {
+		int[] health = new int[robotList.size()];
+		for (int i = 0; i < robotList.size(); i++)
+			health[i] = this.health.get(i);
+		return health;
 	}
 	
 	public int[] getLinkStatus(int robotId) {

@@ -167,10 +167,30 @@ public class VController implements FeatureListener, MessageListener {
 		return robotList.get(robotInList(displayedRobot)).getDisplayedSensors();
 	}
 	
+	public void updateHealth(int robotId, int health) {
+		if (robotInList(robotId) == -1)
+			return;
+		linkStatus.setHealth(robotId, health);
+		if (Display.getCurrent() != null) {
+			gui.updateHealthStatus(linkStatus.getHealth());
+		} else {
+			if (!display.isDisposed()) {
+				display.asyncExec(new Runnable() {
+					public void run() {
+						if (display.isDisposed()) {
+							return;
+						}
+						gui.updateHealthStatus(linkStatus.getHealth());
+					}
+				});
+			}
+		}
+	}
+	
 	public void setDisplayedSensors(boolean[] displayedSensors) {
 		robotList.get(robotInList(displayedRobot)).setDisplayedSensors(displayedSensors);
 		if (Display.getCurrent() != null) {
-			System.out.println("start gui");
+			System.out.println("update displayed sensors");
 			gui.updateDisplayedSensors();
 		} else {
 			if (!display.isDisposed()) {
@@ -208,6 +228,7 @@ public class VController implements FeatureListener, MessageListener {
 			if (Display.getCurrent() != null) {
 				System.out.println("start gui");
 				gui.run();
+				//gui.updateLinkStatus(linkStatus.getLinkStatus(displayedRobot));
 			} else {
 				if (!display.isDisposed()) {
 					display.asyncExec(new Runnable() {
