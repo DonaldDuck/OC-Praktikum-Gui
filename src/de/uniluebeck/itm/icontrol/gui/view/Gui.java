@@ -33,6 +33,12 @@ import de.uniluebeck.itm.icontrol.gui.controller.VController;
 import de.uniluebeck.itm.icontrol.gui.view.VBatteryDisplay;
 import de.uniluebeck.itm.icontrol.gui.view.VSensorDisplay;
 
+/**
+ * This class realizes the graphical user interface.
+ * @see VController
+ * 
+ * @author Johannes Kotzerke
+ */
 public class Gui implements Listener, SelectionListener {
 	private VController controller;
 	private Composite container, features, linkStatus, parameters, sensors;
@@ -117,6 +123,7 @@ public class Gui implements Listener, SelectionListener {
 	    parametersGroup = new Group(controlGroup, SWT.SHADOW_ETCHED_IN);
 	    parametersGroup.setText("Enter parameters:");
 	    parametersGroup.setLayout(new GridLayout(1, false));
+	    parametersGroup.setToolTipText("All parameters are numeric values!");
 	    parameters = new Composite(parametersGroup, SWT.NONE);
 	    
 	    dialogButton = new Button(bottom, SWT.PUSH);
@@ -129,7 +136,7 @@ public class Gui implements Listener, SelectionListener {
 	}
 	
 	/**
-	 * Starts the timer, that refreshes the sensor devolution's.
+	 * Starts the timer, that refreshes the sensor's devolution.
 	 */
 	protected void startSensorTimer() {
 		if (timer == null) {
@@ -149,14 +156,25 @@ public class Gui implements Listener, SelectionListener {
 	    container.getDisplay().timerExec(time, timer);
 	}
 	
+	/**
+	 * Sets the time period for sensor refreshing.
+	 * @param time refresh time in ms
+	 */
 	protected void setTime(int time) {
 		this.time = time;
 	}
 	
+	/**
+	 * Returns the time period of sensor refreshing
+	 * @return refresh time in ms
+	 */
 	protected int getTime() {
 		return time;
 	}
 	
+	/**
+	 * Stops the timer for sensor refreshing.
+	 */
 	private void stopSensorTimer() {
 		container.getDisplay().timerExec(-1, timer);
 	}
@@ -183,6 +201,11 @@ public class Gui implements Listener, SelectionListener {
 		container.layout(true, true);
 	}
 	
+	/**
+	 * Changes all displayed thingies to the ones of the chosen robot.
+	 * @param firstTime
+	 * 			<code>true</code> if this method is called for the first time
+	 */
 	private void updateRobot(boolean firstTime) {
 		if (!firstTime)
 			stopSensorTimer();
@@ -194,10 +217,30 @@ public class Gui implements Listener, SelectionListener {
 		startSensorTimer();
 	}
 	
+	/**
+	 * Updates the current displayed connection quality of the displayed robot to
+	 * all other robots.
+	 * 
+	 * @param linkStatus
+	 * 		contains the link quality of all robots to the displayed one in the
+	 * 		order, they are stored in the <code>robotList</code>.
+	 */
 	public void updateLinkStatus(int[] linkStatus) {
 		this.linkStatusDisplay.refreshLinkStatus(linkStatus);
 	}
 	
+	/**
+	 * Updates the current health of each robot. In this context health means
+	 * how long the last message to another robot is ago.
+	 * 
+	 * @param health
+	 * 			contains the health of each robot in the order, they are stored
+	 * 			in the <code>robotList</code>. The numeric values are the
+	 * 			following ones: 
+	 * 			2: very healthy (last message was received not long ago)
+	 * 			1: ok (last message was received a little bit ago)
+	 * 			0: ill (last message was received a long time ago)
+	 */		
 	public void updateHealthStatus(int[] health) {
 		this.linkStatusDisplay.refreshAllHealthIcons(health);
 	}
@@ -268,6 +311,9 @@ public class Gui implements Listener, SelectionListener {
 		this.container.layout(true, true);
 	}
 	
+	/**
+	 * Manages which sensors are currently displayed and which aren't.
+	 */
 	public void updateDisplayedSensors() {
 		String[] sensorNames2 = controller.getAllSensorNames();
 		for (int i = 0; i < sensorNames2.length; i++)

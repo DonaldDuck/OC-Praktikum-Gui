@@ -39,14 +39,23 @@ public class VController implements FeatureListener, MessageListener {
 	private LinkedList<VRobot> robotList;
 
 	/**
-	 * The list position of the currently displayed robot
+	 * The id of the currently displayed robot
 	 */
 	private int displayedRobot;
 	
+	/**
+	 * The swt display, that is currently used
+	 */
 	private Display display;
 	
+	/**
+	 * The link status and health of all known robots 
+	 */
 	private VLinkStatus linkStatus;
 
+	/**
+	 * The used gui
+	 */
 	private Gui gui;
 
 	public VController(final PluginiControl2iShell control, final Composite container) {
@@ -74,6 +83,13 @@ public class VController implements FeatureListener, MessageListener {
 		return -1;
 	}
 	
+	/**
+	 * Returns the link status of the displayed robot
+	 * @return
+	 * 		this <code>int[]</code> contains the link quality of the connection
+	 * 		between the displayed robot and all robots in order the ids are
+	 * 		stored in the <code>robotList</code>.
+	 */
 	public int[] getLinkStatus() {
 		return linkStatus.getLinkStatus(displayedRobot);
 	}
@@ -88,14 +104,32 @@ public class VController implements FeatureListener, MessageListener {
 		displayedRobot = id;
 	}
 	
+	/**
+	 * Returns the the displayed robot's sensor's range of the given sensor name
+	 * @param name
+	 * 			the sensor name
+	 * @return
+	 * 			<code>int[0]</code> the sensor's minimum
+	 * 			<code>int[1]</code> the sensor's maximum
+	 */
 	public int[] getSensorsMinMax(String name) {
 		return robotList.get(robotInList(displayedRobot)).getSensorsMinMax(name);
 	}
 	
+	/**
+	 * Returns if the currently displayed robot has a sensor called 'battery'.
+	 * @return
+	 * 		<code>true</code> if there is such a sensor else <code>false</code>
+	 */
 	public boolean getContainsBattery() {
 		return robotList.get(robotInList(displayedRobot)).getContainsBattery();
 	}
 	
+	/**
+	 * Returns all sensor names the currently displayed robot has registered.
+	 * @return
+	 * 		all sensor names in order they were registered
+	 */
 	public String[] getAllSensorNames() {
 		return robotList.get(robotInList(displayedRobot)).getAllSensorNames();
 	}
@@ -116,6 +150,30 @@ public class VController implements FeatureListener, MessageListener {
 	 */
 	public void showMeWhatYouGot(){
 		control.showMeWhatYouGot();
+	}
+	
+	/**
+	 * Removes the given robot from the <code>robotList</code> and the
+	 * <code>linkStatus</code>.
+	 * @param robotId
+	 * 			the given robot by id
+	 */
+	public void removeRobot(int robotId) {
+		int position = robotInList(robotId);
+		if (position == -1)
+			return;
+		robotList.remove(position);
+		linkStatus.removeRobot(robotId);
+	}
+	
+	/**
+	 * Checks if only one robot is in the <code>robotList</code>
+	 * @return
+	 * 		<code>true</code> if there is only one robot in the list, else
+	 * 		<code>false</code>
+	 */
+	public boolean isLastRobot() {
+		return (robotList.size() == 1);
 	}
 	
 	/**
@@ -163,10 +221,26 @@ public class VController implements FeatureListener, MessageListener {
 		control.getGateway().doTask(robotList.get(robotInList(displayedRobot)).getId(), taskName, parameters.length, parameters);
 	}
 	
+	/**
+	 * Returns a <code>boolean[]</code> with the length how much sensors are
+	 * registered for the displayed robot. The sensors are in order they were
+	 * registered.
+	 * 
+	 * @return
+	 * 		<code>true</code> if this sensor is currently displayed in the gui
+	 * 		else <code>false</code>
+	 */
 	public boolean[] getDisplayedSensors() {
 		return robotList.get(robotInList(displayedRobot)).getDisplayedSensors();
 	}
 	
+	/**
+	 * Sets the health status for the given robot.
+	 * @param robotId
+	 * 			the given robot by id
+	 * @param health
+	 * 			the new health status (0: ill, 1: ok, 2: healthy)
+	 */
 	public void updateHealth(int robotId, int health) {
 		if (robotInList(robotId) == -1)
 			return;
@@ -187,6 +261,13 @@ public class VController implements FeatureListener, MessageListener {
 		}
 	}
 	
+	/**
+	 * Sets the displayed sensors of the currently displayed robot
+	 * @param displayedSensors
+	 * 			this <code>boolean[]</code> contains for every robot sensor
+	 * 			<code>true</code> if this sensor should be displayed, else
+	 * 			<code>false</code>
+	 */
 	public void setDisplayedSensors(boolean[] displayedSensors) {
 		robotList.get(robotInList(displayedRobot)).setDisplayedSensors(displayedSensors);
 		if (Display.getCurrent() != null) {
@@ -271,6 +352,28 @@ public class VController implements FeatureListener, MessageListener {
 	// MessageListener
 	@Override
 	public void onMessage(final int robotId, final String taskName, final int valueLength, final int[] values) {
+		if (taskName.equals("healthStatus")) {
+			if (values.length%2 == 1)
+				return;
+			for (int i = 0; i < values.length/2; i++)
+				linkStatus.setHealth(values[2*i], values[2*i+1]);
+			System.out.println("healthStatus set!");
+			if (Display.getCurrent() != null) {
+				gui.updateHealthStatus(linkStatus.getHealth());
+			} else {
+				if (!display.isDisposed()) {
+					display.asyncExec(new Runnable() {
+						public void run() {
+							if (display.isDisposed()) {
+								return;
+							}
+							gui.updateHealthStatus(linkStatus.getHealth());
+						}
+					});
+				}
+			}
+			return;
+		}
 		final int position = robotInList(robotId);
 		if (position == -1) {
 			System.err.println("I don't know this robot!");
@@ -279,10 +382,23 @@ public class VController implements FeatureListener, MessageListener {
 		if (taskName.contains("sensor_")) {
 				robotList.get(position).updateSensor(taskName.replaceFirst("^sensor_", ""), values[0]);
 		} else if (taskName.equals("linkStatus")) {
-			//linkStatus.setLinkStatus(robotId, robotId2, linkStatus);
-			if (robotId == displayedRobot) {
-				// gui.updateLinkStatus
-				// remove if-{}
+			if (values.length%2 == 1)
+				return;
+			for (int i = 0; i < values.length/2; i++)
+				linkStatus.setLinkStatus(robotId, values[2*i], values[2*i+1]);
+			if (Display.getCurrent() != null) {
+				gui.updateLinkStatus(linkStatus.getLinkStatus(displayedRobot));
+			} else {
+				if (!display.isDisposed()) {
+					display.asyncExec(new Runnable() {
+						public void run() {
+							if (display.isDisposed()) {
+								return;
+							}
+							gui.updateLinkStatus(linkStatus.getLinkStatus(displayedRobot));
+						}
+					});
+				}
 			}
 		}
 	}

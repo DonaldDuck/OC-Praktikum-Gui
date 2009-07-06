@@ -20,6 +20,7 @@ import de.uniluebeck.itm.icontrol.gui.controller.VController;
 
 /**
  * This class shows a devotion of the sensors value in its given range
+ * @see Gui
  * 
  * @author Johannes Kotzerke
  */
@@ -153,8 +154,8 @@ public class VSensorDisplay {
 	}
 	
 	/**
-	 * Calls the <code>update(int value)</code> with a random value of the
-	 * given sensor range.
+	 * Calls the <code>update(int value)</code> with the current sensor value
+	 * got from the <code>VController</code>.
 	 */
 	public void update() {
 		update((int)((max - min) * Math.random()) + min);

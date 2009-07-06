@@ -8,6 +8,13 @@ package de.uniluebeck.itm.icontrol.gui.model;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * This class represents a robot's sensor with all important information like
+ * sensor range, current sensor value and sensor name.
+ * @see VRobot
+ * 
+ * @author Johannes Kotzerke
+ */
 public class VSensor {
 	
 	/**
@@ -20,7 +27,6 @@ public class VSensor {
 	 */
 	private int currentValue, min, max;
 	
-	
 	public VSensor(String name, int min, int max){
 		System.out.println("Created sensor " + name);
 		this.name = name;
@@ -29,26 +35,49 @@ public class VSensor {
 		currentValue = min;
 	}
 	
+	/**
+	 * Returns the current sensor value
+	 * @return
+	 * 		the value
+	 */
 	public int getCurrentValue (){
 		return currentValue;
 	}
 
-	
+	/**
+	 * Returns the sensor's name
+	 * @return
+	 * 		the name
+	 */
 	public String getName() {
 		return name;
 	}
 
-
+	/**
+	 * Returns the sensor's receivable minimum
+	 * @return
+	 * 		the minimum
+	 */
 	public int getMin() {
 		return min;
 	}
 
-
+	/**
+	 * Returns the sensor's receivable maximum
+	 * @return
+	 * 		the maximum
+	 */
 	public int getMax() {
 		return max;
 	}
 
-
+	/**
+	 * Sets the current sensor value to the given value. If the given one is
+	 * out of range, the value will be set to the minimum respectively the maximum.
+	 * 
+	 * @param currentValue
+	 * 		the given value
+	 */
 	public void setCurrentValue(int currentValue) {
 		if (currentValue < min) {
 			this.currentValue = min;

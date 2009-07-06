@@ -25,6 +25,13 @@ import org.eclipse.swt.widgets.Text;
 
 import de.uniluebeck.itm.icontrol.gui.controller.VController;
 
+/**
+ * This class is a dialog for changing the displayed sensors and their refreshing time. 
+ * @see Gui
+ * 
+ * @author Johannes Kotzerke
+ *
+ */
 public class VSensorDialog extends Dialog implements Listener{
 	private LinkedList<Button> buttonList;
 	private Button ok, cancel;
@@ -42,7 +49,9 @@ public class VSensorDialog extends Dialog implements Listener{
 		this.gui = gui;
 	}
 	
-	
+	/**
+	 * Opens this dialog and loads the current values.
+	 */
 	public void open() {
 		oldConfig = controller.getDisplayedSensors();
 		newConfig = oldConfig;

@@ -28,10 +28,20 @@ import org.eclipse.swt.widgets.Composite;
  */
 public class VBatteryDisplay {
 	
+	/**
+	 * The <code>Composite</code> in which the battery is created. 
+	 */
 	private Composite container;
 	
+	/**
+	 * The background image containing an empty battery, on which the charging
+	 * level is drawn.
+	 */
 	private Image batteryImage;
 	
+	/**
+	 * The <code>CLabel</code> containing the battery image.
+	 */
 	private CLabel battery;
 	
 	public VBatteryDisplay(Composite container) {
@@ -81,6 +91,9 @@ public class VBatteryDisplay {
 //    	container.layout(true, true);
 	}
 	
+	/**
+	 * Disposes this battery.
+	 */
 	public void kill() {
 		battery.dispose();
 	}

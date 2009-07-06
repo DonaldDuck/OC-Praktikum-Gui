@@ -10,12 +10,26 @@ package de.uniluebeck.itm.icontrol.gui.model;
 
 import java.util.Vector;
 
+/**
+ * This class saves the link quality between all robots and their health status.
+ *  
+ * @author Johannes Kotzerke
+ */
 public class VLinkStatus {
 	
+	/**
+	 * The dynamic table for storing the link quality between robots 
+	 */
 	private Vector<Vector<Integer>> linkStatus;
 	
+	/**
+	 * A own list containing all robot ids in order they registered
+	 */
 	private Vector<Integer> robotList;
 	
+	/**
+	 * A list, which stores the health value for each robot.
+	 */
 	private Vector<Integer> health;
 	
 	public VLinkStatus() {
@@ -24,6 +38,15 @@ public class VLinkStatus {
 		health = new Vector<Integer>(0,1);
 	}
 	
+	/**
+	 * Adds the robot with the given id to the link quality table by adding a new
+	 * row and a new column (every field contains the value -1 by initialization).
+	 * Furthermore the id is stored in the <code>robotList</code> and the health
+	 * status for that robot is set to healthy (2).
+	 *  
+	 * @param robotId
+	 * 			the robot's id
+	 */
 	public void addRobot(int robotId) {
 		if (robotPosition(robotId) != -1)
 			return;
@@ -42,6 +65,16 @@ public class VLinkStatus {
 		System.out.println("added " + robotId + " and set health to 2!");
 	}
 	
+	/**
+	 * Sets the link quality between two robots 
+	 * 
+	 * @param robotId
+	 * 			one robot's id
+	 * @param robotId2
+	 * 			the other robot's id
+	 * @param linkStatus
+	 * 			the connection quality between these two robots in percentage. 
+	 */
 	public void setLinkStatus(int robotId, int robotId2, int linkStatus) {
 		int i = robotPosition(robotId);
 		int j = robotPosition(robotId2);
@@ -51,6 +84,14 @@ public class VLinkStatus {
 		this.linkStatus.get(j).set(i, new Integer(linkStatus));
 	}
 	
+	/**
+	 * Returns the position of the given robot id in the list
+	 * @param robotId
+	 * 			the robot id
+	 * @return
+	 * 		the position in <code>robotList</code>, if there isn't a robot with
+	 * 		that id -1 is returned.
+	 */
 	private int robotPosition(int robotId) {
 		for (int i = 0; i < robotList.size(); i++) {
 			if (robotList.get(i).equals(robotId))
@@ -59,6 +100,29 @@ public class VLinkStatus {
 		return -1;
 	}
 	
+	/**
+	 * Removes the given robot from the <code>linkStatus</code> table and the
+	 * intern <code>robotList</code>.
+	 * @param robotId
+	 * 			the given robot by id
+	 */
+	public void removeRobot(int robotId) {
+		int position = robotPosition(robotId);
+		if (position == -1)
+			return;
+		robotList.remove(position);
+		linkStatus.remove(position);
+		for (Vector<Integer> vector : linkStatus)
+			vector.remove(position);
+	}
+	
+	/**
+	 * Sets the health status of the given robot
+	 * @param robotId
+	 * 		the robot's id
+	 * @param health
+	 * 		the health status (0: ill, 1: ok, 2: healthy)
+	 */
 	public void setHealth(int robotId, int health) {
 		int position = robotPosition(robotId);
 		if (position == -1)
@@ -66,6 +130,13 @@ public class VLinkStatus {
 		this.health.set(position, new Integer(health));
 	}
 	
+	/**
+	 * Returns the health status of all known robots ordered by their appearance
+	 * in <code>robotList</code>.
+	 *  
+	 * @return
+	 * 		the health of all robots (0: ill, 1: ok, 2: healthy)
+	 */
 	public int[] getHealth() {
 		int[] health = new int[robotList.size()];
 		for (int i = 0; i < robotList.size(); i++)
@@ -73,6 +144,15 @@ public class VLinkStatus {
 		return health;
 	}
 	
+	/**
+	 * Returns the link quality between the given robot and all robots
+	 * 
+	 * @param robotId
+	 * 		the given robot
+	 * @return
+	 * 		the connection quality in percentage ordered by their appearance
+	 * 		in <code>robotList</code>. 
+	 */
 	public int[] getLinkStatus(int robotId) {
 		int i = robotPosition(robotId);
 		if (i == -1)
@@ -83,6 +163,9 @@ public class VLinkStatus {
 		return linkStatus;
 	}
 	
+	/**
+	 * Prints both <code>robotList</code> and the <code>linkStatus</code> table.
+	 */
 	public void print() {
 		System.out.println("RobotList:");
 		System.out.print("[");

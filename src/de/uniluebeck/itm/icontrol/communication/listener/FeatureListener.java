@@ -8,6 +8,7 @@ package de.uniluebeck.itm.icontrol.communication.listener;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+
 public interface FeatureListener {
 	public void onAction(int robotId, int taskListLength, String[] taskList, int[] paramListLength, String[][] paramList, int sensorLength, String[] sensors, int[] sensorRange);
 }

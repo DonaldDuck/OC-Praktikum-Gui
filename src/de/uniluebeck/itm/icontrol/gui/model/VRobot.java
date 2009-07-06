@@ -13,7 +13,7 @@ import java.util.LinkedList;
 /**
  * The <code>VRobot</code> class is a model of the robot for drawing. It contains all
  * important information, which could be displayed.
- *  @see VFeature, VController
+ *  @see VFeature, VController, VSensor
  *  
  * @author Johannes Kotzerke 
  */
@@ -35,8 +35,14 @@ public class VRobot {
 	 */
 	private LinkedList<VSensor> sensorList;
 	
+	/**
+	 * <code>true</code> if the robot has a sensor called "battery"
+	 */
 	private boolean containsBattery = false;
 	
+	/**
+	 * The sensor model for that battery
+	 */
 	private VSensor battery;
 	
 	/**
@@ -65,6 +71,15 @@ public class VRobot {
 		}
 	}
 	
+	/**
+	 * Returns the range of the sensor given by name
+	 * 
+	 * @param name
+	 * 		the sensor's name
+	 * @return
+	 * 		the sensor's range. <code>int[0]</code> is the minimum value and
+	 * 		<code>int[1]</code> is the maximum value. 
+	 */
 	public int[] getSensorsMinMax(String name) {
 		if (name.equals("battery") && containsBattery)
 			return new int[]{0, 100};
@@ -74,6 +89,11 @@ public class VRobot {
 		return range;
 	}
 	
+	/**
+	 * Returns if this robot has a sensor called 'battery'.
+	 * @return
+	 * 		<code>true</code> if there is such a sensor, else <code>false</code>
+	 */
 	public boolean getContainsBattery() {
 		return containsBattery;
 	}
