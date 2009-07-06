@@ -302,6 +302,9 @@ public class Gui implements Listener, SelectionListener {
 			Label l = new Label(this.parameters, SWT.LEFT);
 			l.setText(parameters[i] + ":");
 			Text t = new Text(this.parameters, SWT.BORDER);
+			GridData grid = new GridData();
+			grid.widthHint = 80;
+			t.setLayoutData(grid);
 //			t.setTextLimit(9);
 			t.setSize(20, 12);
 //			t.addListener(SWT.Verify, this);
@@ -409,10 +412,10 @@ public class Gui implements Listener, SelectionListener {
 			    
 				// Testeingaben, damit man was zu klicken hat
 			    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-				controller.onAction(123, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {
-						{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
-				controller.onAction(124, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {
-						{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 1, 0, 1});
+//				controller.onAction(123, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {
+//						{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+//				controller.onAction(124, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {
+//						{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 1, 0, 1});
 				//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			}
 		}

@@ -303,7 +303,9 @@ public class VController implements FeatureListener, MessageListener {
 			robotId = robotId * -1;
 		if (robotList.isEmpty()) {
 			System.out.println("empty");
-			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));			
+			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
+			for (int i = 0; i < paramList.length; i++)
+				print(paramList[i]);
 			System.out.println("added to list");
 			linkStatus.addRobot(robotId);
 			if (Display.getCurrent() != null) {
@@ -346,6 +348,18 @@ public class VController implements FeatureListener, MessageListener {
 			}
 		}
 		System.out.println("done");
+	}
+	
+	private void print(String[] paramList) {
+		System.out.println("paramList:");
+		System.out.print("[");
+		for (int i = 0; i < paramList.length; i++) {
+			if(i == 0)
+				System.out.print(paramList[i]);
+			else
+				System.out.print(", " + paramList[i]);
+		}
+		System.out.print("]");
 	}
 	
 

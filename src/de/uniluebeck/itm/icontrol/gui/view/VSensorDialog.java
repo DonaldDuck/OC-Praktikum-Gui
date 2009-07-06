@@ -12,6 +12,8 @@ import java.util.LinkedList;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -63,11 +65,15 @@ public class VSensorDialog extends Dialog implements Listener{
 		shell.setLayout(rowLayout2);
 		
 		Group group2 = new Group(shell, SWT.SHADOW_ETCHED_IN);
-		RowLayout rowLayout3 = new RowLayout(SWT.VERTICAL);
-		rowLayout3.fill = true;
-		group2.setLayout(rowLayout3);
+//		RowLayout rowLayout3 = new RowLayout(SWT.VERTICAL);
+//		rowLayout3.fill = true;
+//		group2.setLayout(rowLayout3);
+		group2.setLayout(new GridLayout(1, false));
 		group2.setText("Set refresh time (in ms)");
-		text = new Text(group2, SWT.BORDER);
+		text = new Text(group2, SWT.RIGHT | SWT.BORDER);
+		GridData grid = new GridData();
+		grid.widthHint = 80;
+		text.setLayoutData(grid);
 		oldTime = gui.getTime();
 		text.setText("" + oldTime);
 		text.setToolTipText("No values smaller than 1 allowed!");
