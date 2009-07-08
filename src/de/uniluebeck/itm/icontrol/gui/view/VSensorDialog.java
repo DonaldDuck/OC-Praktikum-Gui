@@ -44,6 +44,7 @@ public class VSensorDialog extends Dialog implements Listener{
 	private final boolean activated = true;
 	private int oldTime;
 	private Gui gui;
+	private String lastAction = "none";
 	
 	public VSensorDialog(Composite container, Gui gui, VController controller) {
 		super(container.getShell(), SWT.TITLE | SWT.BORDER | SWT.APPLICATION_MODAL);
@@ -118,20 +119,28 @@ public class VSensorDialog extends Dialog implements Listener{
 		if (activated && e.type == SWT.KeyUp){
 			switch (e.keyCode){
 				case SWT.ARROW_LEFT:
-					System.out.println("left");
 					controller.doTask("turn", new int[]{42, 0});
 					break;
 				case SWT.ARROW_RIGHT:
-					System.out.println("right");
 					controller.doTask("turn", new int[]{-42, 0});
 					break;
 				case SWT.ARROW_UP:
-					System.out.println("up");
-					controller.doTask("drive", new int[]{500, 32768});
+					if (lastAction.equals("backward")) {
+						controller.doTask("stop", new int[]{});
+						lastAction = "stop";
+					} else {
+						controller.doTask("drive", new int[]{500, 32768});
+						lastAction = "forward";
+					}
 					break;
 				case SWT.ARROW_DOWN:
-					System.out.println("down");
-					controller.doTask("drive", new int[]{-500, 32768});
+					if (lastAction.equals("forward")) {
+						controller.doTask("stop", new int[]{});
+						lastAction = "stop";
+					} else {
+						controller.doTask("drive", new int[]{-500, 32768});
+						lastAction = "backward";
+					}
 					break;
 			}
 			return;
