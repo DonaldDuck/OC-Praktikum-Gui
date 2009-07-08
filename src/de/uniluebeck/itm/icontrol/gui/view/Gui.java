@@ -289,26 +289,24 @@ public class Gui implements Listener, SelectionListener {
 		selectedFeature = featureToSelect;
 		this.parameters = new Composite(parametersGroup, SWT.NONE);
 		this.parameters.setLayout(new GridLayout(2, false));
-		if (parameters.length == 0) {
-			CLabel label = new CLabel(this.parameters, SWT.NONE);
-			label.setText("There aren't any parameters!");
-			parametersGroup.redraw();
-			this.container.layout(true, true);
-			textList = new LinkedList<Text>();
-			return;
-		}
 		textList = new LinkedList<Text>();
 		for (int i = 0; i < parameters.length; i++){
-			Label l = new Label(this.parameters, SWT.LEFT);
-			l.setText(parameters[i] + ":");
-			Text t = new Text(this.parameters, SWT.BORDER);
-			GridData grid = new GridData();
-			grid.widthHint = 80;
-			t.setLayoutData(grid);
-//			t.setTextLimit(9);
-			t.setSize(20, 12);
-//			t.addListener(SWT.Verify, this);
-			textList.add(t);
+			if (parameters[i] != null) {
+				Label l = new Label(this.parameters, SWT.LEFT);
+				l.setText(parameters[i] + ":");
+				Text t = new Text(this.parameters, SWT.BORDER);
+				GridData grid = new GridData();
+				grid.widthHint = 80;
+				t.setLayoutData(grid);
+	//			t.setTextLimit(9);
+				t.setSize(20, 12);
+	//			t.addListener(SWT.Verify, this);
+				textList.add(t);
+			}
+		}
+		if (textList.isEmpty()) {
+			CLabel label = new CLabel(this.parameters, SWT.NONE);
+			label.setText("There aren't any parameters!");
 		}
 		controlGroup.redraw();
 		this.container.layout(true, true);
