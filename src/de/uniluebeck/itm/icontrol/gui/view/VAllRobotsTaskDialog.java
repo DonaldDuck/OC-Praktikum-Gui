@@ -28,14 +28,12 @@ public class VAllRobotsTaskDialog extends Dialog implements Listener {
 	private Button ok, cancel;
 	private Shell shell;
 	private VController controller;
-	private Gui gui;
 	private String name;
 	private int[] values, robotIds;
 	
-	public VAllRobotsTaskDialog(Composite container, Gui gui, VController controller) {
+	public VAllRobotsTaskDialog(Composite container, VController controller) {
 		super(container.getShell(), SWT.TITLE | SWT.BORDER | SWT.APPLICATION_MODAL);
 		this.controller = controller;
-		this.gui = gui;
 	}
 	
 	/**

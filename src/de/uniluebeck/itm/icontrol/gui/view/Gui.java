@@ -396,7 +396,7 @@ public class Gui implements Listener, SelectionListener {
 					controller.doTask(buttonList.get(selectedFeature).getText(), parseParameters());
 			} else if (source.equals(taskForButton)){
 				if (parseParameters() != null) {
-					VAllRobotsTaskDialog dialog = new VAllRobotsTaskDialog(container, this, controller);
+					VAllRobotsTaskDialog dialog = new VAllRobotsTaskDialog(container, controller);
 					String[] parameters = null;
 					for (int i = 0; i < buttonList.size(); i++) {
 						if (buttonList.get(i).getSelection())

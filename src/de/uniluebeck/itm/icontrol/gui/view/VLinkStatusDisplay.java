@@ -113,7 +113,7 @@ public class VLinkStatusDisplay {
 	 */
 	public void addRobot(int robotId) {
 		CLabel label = new CLabel(container, SWT.NONE);
-		label.setText(robotId + ": ");
+		label.setText(Integer.toHexString(robotId) + ": ");
 		CLabel label2 = new CLabel(container, SWT.NONE);
 		label2.setText("n.a.");
 		linkStatusList.add(label2);
