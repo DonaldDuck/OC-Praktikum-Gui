@@ -42,14 +42,14 @@ public class VController implements FeatureListener, MessageListener {
 	 * The id of the currently displayed robot
 	 */
 	private int displayedRobot;
-	
+
 	/**
 	 * The swt display, that is currently used
 	 */
 	private Display display;
-	
+
 	/**
-	 * The link status and health of all known robots 
+	 * The link status and health of all known robots
 	 */
 	private VLinkStatus linkStatus;
 
@@ -58,7 +58,7 @@ public class VController implements FeatureListener, MessageListener {
 	 */
 	private Gui gui;
 
-	public VController(final PluginiControl2iShell control, final Composite container) {
+	public VController(PluginiControl2iShell control, Composite container) {
 		this.control = control;
 		this.display = container.getDisplay();
 		this.robotList = new LinkedList<VRobot>();
@@ -74,21 +74,21 @@ public class VController implements FeatureListener, MessageListener {
 	 * @return -1 if there isn't a robot having that id, else the robot's position in the
 	 *         <code>robotList</code>
 	 */
-	private int robotInList(final int id) {
-		for (final VRobot robot : robotList) {
+	private int robotInList(int id) {
+		for (VRobot robot : robotList) {
 			if (robot.getId() == id) {
 				return robotList.indexOf(robot);
 			}
 		}
 		return -1;
 	}
-	
+
 	/**
 	 * Returns the link status of the displayed robot
-	 * @return
-	 * 		this <code>int[]</code> contains the link quality of the connection
-	 * 		between the displayed robot and all robots in order the ids are
-	 * 		stored in the <code>robotList</code>.
+	 * 
+	 * @return this <code>int[]</code> contains the link quality of the connection between the
+	 *         displayed robot and all robots in order the ids are stored in the
+	 *         <code>robotList</code>.
 	 */
 	public int[] getLinkStatus() {
 		return linkStatus.getLinkStatus(displayedRobot);
@@ -100,35 +100,34 @@ public class VController implements FeatureListener, MessageListener {
 	 * @param id
 	 *            the robot's id
 	 */
-	public void setDisplayedRobot(final int id) {
+	public void setDisplayedRobot(int id) {
 		displayedRobot = id;
 	}
-	
+
 	/**
 	 * Returns the the displayed robot's sensor's range of the given sensor name
+	 * 
 	 * @param name
-	 * 			the sensor name
-	 * @return
-	 * 			<code>int[0]</code> the sensor's minimum
-	 * 			<code>int[1]</code> the sensor's maximum
+	 *            the sensor name
+	 * @return <code>int[0]</code> the sensor's minimum <code>int[1]</code> the sensor's maximum
 	 */
 	public int[] getSensorsMinMax(String name) {
 		return robotList.get(robotInList(displayedRobot)).getSensorsMinMax(name);
 	}
-	
+
 	/**
 	 * Returns if the currently displayed robot has a sensor called 'battery'.
-	 * @return
-	 * 		<code>true</code> if there is such a sensor else <code>false</code>
+	 * 
+	 * @return <code>true</code> if there is such a sensor else <code>false</code>
 	 */
 	public boolean getContainsBattery() {
 		return robotList.get(robotInList(displayedRobot)).getContainsBattery();
 	}
-	
+
 	/**
 	 * Returns all sensor names the currently displayed robot has registered.
-	 * @return
-	 * 		all sensor names in order they were registered
+	 * 
+	 * @return all sensor names in order they were registered
 	 */
 	public String[] getAllSensorNames() {
 		return robotList.get(robotInList(displayedRobot)).getAllSensorNames();
@@ -141,46 +140,46 @@ public class VController implements FeatureListener, MessageListener {
 	 *            the feature number in the list
 	 * @return the parameters' names in a <code>String[]</code>
 	 */
-	public String[] getFeatureParameters(final int featureNumber) {
+	public String[] getFeatureParameters(int featureNumber) {
 		return robotList.get(robotInList(displayedRobot)).getFeatureParameters(featureNumber);
 	}
-	
+
 	/**
 	 * Calls <code>showMeWhatYouGot()</code> on the known gateway.
 	 */
-	public void showMeWhatYouGot(){
+	public void showMeWhatYouGot() {
 		control.showMeWhatYouGot();
 	}
-	
+
 	/**
-	 * Removes the given robot from the <code>robotList</code> and the
-	 * <code>linkStatus</code>.
+	 * Removes the given robot from the <code>robotList</code> and the <code>linkStatus</code>.
+	 * 
 	 * @param robotId
-	 * 			the given robot by id
+	 *            the given robot by id
 	 */
 	public void removeRobot(int robotId) {
 		int position = robotInList(robotId);
-		if (position == -1)
+		if (position == -1) {
 			return;
+		}
 		robotList.remove(position);
 		linkStatus.removeRobot(robotId);
 	}
-	
+
 	/**
 	 * Checks if only one robot is in the <code>robotList</code>
-	 * @return
-	 * 		<code>true</code> if there is only one robot in the list, else
-	 * 		<code>false</code>
+	 * 
+	 * @return <code>true</code> if there is only one robot in the list, else <code>false</code>
 	 */
 	public boolean isLastRobot() {
 		return (robotList.size() == 1);
 	}
-	
+
 	/**
-	 * Returns the current value of the by its name given sensor of the currently
-	 * displayed robot
+	 * Returns the current value of the by its name given sensor of the currently displayed robot
 	 * 
-	 * @param name the sensor's name
+	 * @param name
+	 *            the sensor's name
 	 * @return the sensor's current value
 	 */
 	public int getCurrentSensorValue(String name) {
@@ -198,6 +197,26 @@ public class VController implements FeatureListener, MessageListener {
 			thatNames[i] = robotList.get(i).getId();
 		}
 		return thatNames;
+	}
+	
+	/**
+	 * Checks for every robot if it has the by name and parameters specified
+	 * feature.
+	 * 
+	 * @param name
+	 * 			the feature's name
+	 * @param parameters
+	 * 			the parameters' names
+	 * @return
+	 * 			the <code>boolean[]</code> has the same order as the
+	 * 			<code>robotList</code>. Every cell is <code>true</code>	if that
+	 * 			robot has the specified feature, else <code>false</code>.
+	 */
+	public boolean[] robotsWithThatFeature(String name, String[] parameters) {
+		boolean[] thatRobots = new boolean[robotList.size()];
+		for (int i = 0; i < robotList.size(); i++)
+			thatRobots[i] =  robotList.get(i).featureExists(name, parameters);
+		return thatRobots;
 	}
 
 	/**
@@ -217,33 +236,58 @@ public class VController implements FeatureListener, MessageListener {
 	 * @param parameters
 	 *            the given parameters
 	 */
-	public void doTask(final String taskName, final int[] parameters) {
+	public void doTask(String taskName, int[] parameters) {
+		System.out.println("ausgelesenes doTask: ");
+		System.out.println("task: " + taskName);
+		System.out.println("parameters: [");
+		for (int i = 0; i < parameters.length; i++) {
+			if (i == 0) {
+				System.out.print(parameters[i] + "");
+			} else {
+				System.out.print(", " + parameters[i]);
+			}
+		}
+		System.out.print("]");
 		control.getGateway().doTask(robotList.get(robotInList(displayedRobot)).getId(), taskName, parameters.length, parameters);
 	}
 	
 	/**
-	 * Returns a <code>boolean[]</code> with the length how much sensors are
-	 * registered for the displayed robot. The sensors are in order they were
-	 * registered.
+	 * Musst du ausfuellen
 	 * 
-	 * @return
-	 * 		<code>true</code> if this sensor is currently displayed in the gui
-	 * 		else <code>false</code>
+	 * @param robotIds
+	 * @param taskName
+	 * @param parameters
+	 */
+	public void doTaskFor(int[] robotIds, String taskName, int[] parameters) {
+		for (int i = 0; i < robotIds.length; i++) {
+			if (robotInList(robotIds[i]) != -1)
+				control.getGateway().doTask(robotIds[i], taskName, parameters.length, parameters);
+		}
+	}
+
+	/**
+	 * Returns a <code>boolean[]</code> with the length how much sensors are registered for the
+	 * displayed robot. The sensors are in order they were registered.
+	 * 
+	 * @return <code>true</code> if this sensor is currently displayed in the gui else
+	 *         <code>false</code>
 	 */
 	public boolean[] getDisplayedSensors() {
 		return robotList.get(robotInList(displayedRobot)).getDisplayedSensors();
 	}
-	
+
 	/**
 	 * Sets the health status for the given robot.
+	 * 
 	 * @param robotId
-	 * 			the given robot by id
+	 *            the given robot by id
 	 * @param health
-	 * 			the new health status (0: ill, 1: ok, 2: healthy)
+	 *            the new health status (0: ill, 1: ok, 2: healthy)
 	 */
 	public void updateHealth(int robotId, int health) {
-		if (robotInList(robotId) == -1)
+		if (robotInList(robotId) == -1) {
 			return;
+		}
 		linkStatus.setHealth(robotId, health);
 		if (Display.getCurrent() != null) {
 			gui.updateHealthStatus(linkStatus.getHealth());
@@ -260,13 +304,13 @@ public class VController implements FeatureListener, MessageListener {
 			}
 		}
 	}
-	
+
 	/**
 	 * Sets the displayed sensors of the currently displayed robot
+	 * 
 	 * @param displayedSensors
-	 * 			this <code>boolean[]</code> contains for every robot sensor
-	 * 			<code>true</code> if this sensor should be displayed, else
-	 * 			<code>false</code>
+	 *            this <code>boolean[]</code> contains for every robot sensor <code>true</code> if
+	 *            this sensor should be displayed, else <code>false</code>
 	 */
 	public void setDisplayedSensors(boolean[] displayedSensors) {
 		robotList.get(robotInList(displayedRobot)).setDisplayedSensors(displayedSensors);
@@ -294,24 +338,27 @@ public class VController implements FeatureListener, MessageListener {
 		gui = null;
 		robotList = null;
 	}
-	
+
 	// FeatureListener
 	@Override
-	public synchronized void onAction(int robotId, int taskListLength, String[] taskList, int[] paramListLength, String[][] paramList, int sensorLength, String[] sensors, int[] sensorRange) {
+	public synchronized void onAction(int robotId, int taskListLength, String[] taskList, int[] paramListLength,
+			String[][] paramList, int sensorLength, String[] sensors, int[] sensorRange) {
 		System.out.println("onAction");
-		if (robotId < 0)
+		if (robotId < 0) {
 			robotId = robotId * -1;
+		}
 		if (robotList.isEmpty()) {
 			System.out.println("empty");
 			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
-			for (int i = 0; i < paramList.length; i++)
+			for (int i = 0; i < paramList.length; i++) {
 				print(paramList[i]);
+			}
 			System.out.println("added to list");
 			linkStatus.addRobot(robotId);
 			if (Display.getCurrent() != null) {
 				System.out.println("start gui");
 				gui.run();
-				//gui.updateLinkStatus(linkStatus.getLinkStatus(displayedRobot));
+				// gui.updateLinkStatus(linkStatus.getLinkStatus(displayedRobot));
 			} else {
 				if (!display.isDisposed()) {
 					display.asyncExec(new Runnable() {
@@ -330,8 +377,9 @@ public class VController implements FeatureListener, MessageListener {
 		else if (robotInList(robotId) == -1) {
 			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
 			linkStatus.addRobot(robotId);
-		}else
+		} else {
 			return;
+		}
 		System.out.println("call gotnewrobot");
 		if (Display.getCurrent() != null) {
 			gui.gotNewRobot(getAllRobotNames());
@@ -349,28 +397,30 @@ public class VController implements FeatureListener, MessageListener {
 		}
 		System.out.println("done");
 	}
-	
+
 	private void print(String[] paramList) {
 		System.out.println("paramList:");
 		System.out.print("[");
 		for (int i = 0; i < paramList.length; i++) {
-			if(i == 0)
+			if (i == 0) {
 				System.out.print(paramList[i]);
-			else
+			} else {
 				System.out.print(", " + paramList[i]);
+			}
 		}
 		System.out.print("]");
 	}
-	
 
 	// MessageListener
 	@Override
-	public void onMessage(final int robotId, final String taskName, final int valueLength, final int[] values) {
+	public void onMessage(int robotId, String taskName, int valueLength, int[] values) {
 		if (taskName.equals("healthStatus")) {
-			if (values.length%2 == 1)
+			if (values.length % 2 == 1) {
 				return;
-			for (int i = 0; i < values.length/2; i++)
-				linkStatus.setHealth(values[2*i], values[2*i+1]);
+			}
+			for (int i = 0; i < values.length / 2; i++) {
+				linkStatus.setHealth(values[2 * i], values[2 * i + 1]);
+			}
 			System.out.println("healthStatus set!");
 			if (Display.getCurrent() != null) {
 				gui.updateHealthStatus(linkStatus.getHealth());
@@ -388,18 +438,22 @@ public class VController implements FeatureListener, MessageListener {
 			}
 			return;
 		}
-		final int position = robotInList(robotId);
+		int position = robotInList(robotId);
 		if (position == -1) {
 			System.err.println("I don't know this robot!");
 			return;
 		}
-		if (taskName.contains("sensor_")) {
-				robotList.get(position).updateSensor(taskName.replaceFirst("^sensor_", ""), values[0]);
+		if (taskName.equals("#message#")){
+			// mach was mit der Nachricht und Sprechblase und so
+		} else if (taskName.contains("sensor_")) {
+			robotList.get(position).updateSensor(taskName.replaceFirst("^sensor_", ""), values[0]);
 		} else if (taskName.equals("linkStatus")) {
-			if (values.length%2 == 1)
+			if (values.length % 2 == 1) {
 				return;
-			for (int i = 0; i < values.length/2; i++)
-				linkStatus.setLinkStatus(robotId, values[2*i], values[2*i+1]);
+			}
+			for (int i = 0; i < values.length / 2; i++) {
+				linkStatus.setLinkStatus(robotId, values[2 * i], values[2 * i + 1]);
+			}
 			if (Display.getCurrent() != null) {
 				gui.updateLinkStatus(linkStatus.getLinkStatus(displayedRobot));
 			} else {

@@ -110,7 +110,7 @@ public class VSensorDialog extends Dialog implements Listener{
 					display.sleep();
 			}
 		}
-		controller.setDisplayedSensors(newConfig);
+//		controller.setDisplayedSensors(newConfig);
 	}
 
 	@Override

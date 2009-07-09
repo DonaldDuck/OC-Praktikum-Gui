@@ -55,7 +55,11 @@ public class VRobot {
 		this.id = robotId;
 		this.featureList = new LinkedList<VFeature>();
 		for (int i = 0; i < taskListLength; i++){
-			featureList.add(new VFeature(taskList[i], paramListLength[i], paramList[i]));
+			String[] parameters = new String[paramListLength[i]];
+			System.arraycopy(paramList[i], 0, parameters, 0, paramListLength[i]);
+			if (!featureExists(taskList[i], parameters)) {
+				featureList.add(new VFeature(taskList[i], paramListLength[i], parameters));
+			}
 		}
 		this.sensorList = new LinkedList<VSensor>();
 		for (int i = 0; i < sensorLength; i++){
@@ -69,6 +73,27 @@ public class VRobot {
 		for (int i = 0; i < sensorList.size(); i++){
 			displayedSensors[i] = true;
 		}
+	}
+	
+	/**
+	 * Checks if the robot has the by name and parameters specified feature.
+	 * @see VFeature
+	 * 
+	 * @param name
+	 * 			the feature's name
+	 * @param parameters
+	 * 			all parameters' names
+	 * @return
+	 * 			<code>true</code> if there is such a feature.
+	 */	
+	public boolean featureExists(String name, String[] parameters) {
+		if (featureList.isEmpty())
+			return false;
+		for (VFeature feature : featureList) {
+			if (feature.equals(name, parameters))
+				return true;
+		}
+		return false;
 	}
 	
 	/**
