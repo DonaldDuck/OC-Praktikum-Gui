@@ -302,7 +302,8 @@ public class Gateway implements Communication {
 	private byte[] intToByteArray(final int integer, final int byteLength) {
 		if ((integer > -128) && (integer < 0)) {
 			final byte[] byteArray = new byte[byteLength];
-			byteArray[byteLength - 1] = (byte) integer;
+			byteArray[0] = (byte) ((integer & 0xff00) >> 8);
+			byteArray[1] = (byte) (0x00ff & integer); 
 			return byteArray;
 		}
 		final int byteNum = (40 - Integer.numberOfLeadingZeros(integer < 0 ? ~integer : integer)) / 8;
