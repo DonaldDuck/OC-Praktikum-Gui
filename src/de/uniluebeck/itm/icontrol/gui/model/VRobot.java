@@ -8,15 +8,17 @@ package de.uniluebeck.itm.icontrol.gui.model;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * @class VRobot
+ * @author Johannes Kotzerke
+ * @brief robot model
+ * @detailed The <code>VRobot</code> class is a model of the robot for drawing.
+ * It contains all important information, which could be displayed.
+ * @see VFeature, VController, VSensor
+ */
+
 import java.util.LinkedList;
 
-/**
- * The <code>VRobot</code> class is a model of the robot for drawing. It contains all
- * important information, which could be displayed.
- *  @see VFeature, VController, VSensor
- *  
- * @author Johannes Kotzerke 
- */
 public class VRobot {
 	
 	/**

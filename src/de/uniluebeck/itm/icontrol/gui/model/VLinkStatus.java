@@ -8,13 +8,15 @@ package de.uniluebeck.itm.icontrol.gui.model;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * @class VLinkStatus
+ * @author Johannes Kotzerke
+ * @brief Saves the link quality and health status.
+ * @detailed Saves the link quality between all robots and their health status.
+ */
+
 import java.util.Vector;
 
-/**
- * This class saves the link quality between all robots and their health status.
- *  
- * @author Johannes Kotzerke
- */
 public class VLinkStatus {
 	
 	/**

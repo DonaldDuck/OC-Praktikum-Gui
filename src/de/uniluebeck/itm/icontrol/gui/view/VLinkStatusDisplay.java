@@ -8,6 +8,13 @@ package de.uniluebeck.itm.icontrol.gui.view;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * @class VLinkStatusDisplay
+ * @author Johannes Kotzerke
+ * @brief Graphical link quality and health representation.
+ * @detailed Realizes the displaying of the link quality and robot health.
+ */
+
 import java.util.LinkedList;
 
 import org.eclipse.swt.SWT;
@@ -16,12 +23,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
-/**
- * Realizes the displaying of the link quality and robot health.
- * @see Gui
- * 
- * @author Johannes Kotzerke
- */
 public class VLinkStatusDisplay {
 	
 	/**

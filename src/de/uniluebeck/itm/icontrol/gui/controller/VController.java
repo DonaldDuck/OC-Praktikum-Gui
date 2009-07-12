@@ -8,6 +8,14 @@ package de.uniluebeck.itm.icontrol.gui.controller;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * @class VController
+ * @author Johannes Kotzerke
+ * @brief Controls all models and the gui.
+ * @detailed The <code>VController</code> class controls the graphical user
+ * interface and all models and manages the communication between these components.
+ */
+
 import java.util.LinkedList;
 
 import org.eclipse.swt.widgets.Composite;
@@ -20,12 +28,6 @@ import de.uniluebeck.itm.icontrol.gui.model.VLinkStatus;
 import de.uniluebeck.itm.icontrol.gui.model.VRobot;
 import de.uniluebeck.itm.icontrol.gui.view.Gui;
 
-/**
- * The <code>VController</code> class controls the graphical user interface and updates the
- * <code>VRobot</code> models.
- * 
- * @author Johannes Kotzerke
- */
 public class VController implements FeatureListener, MessageListener {
 
 	/**
@@ -252,11 +254,14 @@ public class VController implements FeatureListener, MessageListener {
 	}
 	
 	/**
-	 * Musst du ausfuellen
+	 * Gives the chosen task to the communication gateway for all given robots.
 	 * 
 	 * @param robotIds
+	 * 		All robot ids given in an (unordered) array.
 	 * @param taskName
+	 *            the name of the chosen task
 	 * @param parameters
+	 *            the given parameters
 	 */
 	public void doTaskFor(int[] robotIds, String taskName, int[] parameters) {
 		for (int i = 0; i < robotIds.length; i++) {

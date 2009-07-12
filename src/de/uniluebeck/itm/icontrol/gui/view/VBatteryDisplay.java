@@ -8,6 +8,18 @@ package de.uniluebeck.itm.icontrol.gui.view;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ *@class VBatteryDisplay
+ *@author Johannes Kotzerke
+ *@brief Graphical battery representation.
+ *@detailed Draws a image of a battery with the given percentage and writes that
+ * percentage in the battery. The following color encodings are used:
+ * green: 100% <= charging level <= 30%
+ * orange: 30% < charging level <= 10%
+ * red: 10% < charging level <= 0%
+ * non color: else 
+ */
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.graphics.Color;
@@ -15,17 +27,6 @@ import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 
-/**
-* Draws a image of a battery with the given percentage and writes that
- * percentage in the battery. The following color encodings are used:
- * green: 100% <= charging level <= 30%
- * orange: 30% < charging level <= 10%
- * red: 10% < charging level <= 0%
- * non color: else 
- * 
- * @author Johannes Kotzerke
- *
- */
 public class VBatteryDisplay {
 	
 	/**

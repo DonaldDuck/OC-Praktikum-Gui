@@ -7,6 +7,14 @@ package de.uniluebeck.itm.icontrol.gui.view;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * @class VAllRobotsTaskDialog
+ * @author Johannes Kotzerke
+ * @brief Displays all possible robots you can let do the given task.
+ * @detailed You choose a task, this class displays all possible robots you can
+ * let do that task and this class let's even send that task to every chosen robot.
+ */
+
 import java.util.LinkedList;
 
 import org.eclipse.swt.SWT;

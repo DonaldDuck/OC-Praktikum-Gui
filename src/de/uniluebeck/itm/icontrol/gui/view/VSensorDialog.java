@@ -8,6 +8,14 @@ package de.uniluebeck.itm.icontrol.gui.view;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * @class VSensorDisplay
+ * @author Johannes Kotzerke
+ * @brief Changes sensor refreshing time and displayed sensors. 
+ * @detailed  This class is a dialog for changing the displayed sensors and
+ * their refreshing time.
+ */
+
 import java.util.LinkedList;
 
 import org.eclipse.swt.SWT;
@@ -27,13 +35,6 @@ import org.eclipse.swt.widgets.Text;
 
 import de.uniluebeck.itm.icontrol.gui.controller.VController;
 
-/**
- * This class is a dialog for changing the displayed sensors and their refreshing time. 
- * @see Gui
- * 
- * @author Johannes Kotzerke
- *
- */
 public class VSensorDialog extends Dialog implements Listener{
 	private LinkedList<Button> buttonList;
 	private Button ok, cancel;

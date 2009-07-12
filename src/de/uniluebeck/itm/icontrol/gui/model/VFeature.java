@@ -9,11 +9,12 @@ package de.uniluebeck.itm.icontrol.gui.model;
  ------------------------------------------------------------------------*/
 
 /**
- * The <code>VFeature</code> class is the model of a robot's supported feature.
- * 
- * @see VRobot
+ * @class VFeature
  * @author Johannes Kotzerke
+ * @brief Model for every robot feature
+ * @detailed This model stores one robot feature including its name and parameters' names.
  */
+
 public class VFeature {
 
 	/**

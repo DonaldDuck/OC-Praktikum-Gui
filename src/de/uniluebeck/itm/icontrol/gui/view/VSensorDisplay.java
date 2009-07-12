@@ -8,6 +8,14 @@ package de.uniluebeck.itm.icontrol.gui.view;
  * file in the root of the source tree for further details.
  ------------------------------------------------------------------------*/
 
+/**
+ * @class VSensorDisplay
+ * @author Johannes Kotzerke
+ * @brief Graphical sensor representation.
+ * @detailed This class realizes a graphical representation of the given sensor
+ * including a devolution.
+ */
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.GC;
@@ -18,12 +26,6 @@ import org.eclipse.swt.widgets.Composite;
 
 import de.uniluebeck.itm.icontrol.gui.controller.VController;
 
-/**
- * This class shows a devotion of the sensors value in its given range
- * @see Gui
- * 
- * @author Johannes Kotzerke
- */
 public class VSensorDisplay {
 
 	private CLabel valueDevolutionLabel, currentValueLabel, nameLabel;

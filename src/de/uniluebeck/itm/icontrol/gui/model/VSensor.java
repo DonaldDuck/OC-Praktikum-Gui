@@ -9,12 +9,14 @@ package de.uniluebeck.itm.icontrol.gui.model;
  ------------------------------------------------------------------------*/
 
 /**
- * This class represents a robot's sensor with all important information like
- * sensor range, current sensor value and sensor name.
- * @see VRobot
- * 
+ * @class VSensor
  * @author Johannes Kotzerke
+ * @brief Model of a robot's sensor.
+ * @detailed This class represents a robot's sensor with all important
+ * information like sensor range, current sensor value and sensor name.
+ * @see VRobot
  */
+
 public class VSensor {
 	
 	/**
