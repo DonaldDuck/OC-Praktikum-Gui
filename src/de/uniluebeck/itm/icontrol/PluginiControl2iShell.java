@@ -12,7 +12,6 @@ import ishell.device.MessagePacket;
 import ishell.util.IconTheme;
 
 import org.eclipse.swt.custom.CTabItem;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 
 import de.uniluebeck.itm.icontrol.communication.Communication;
@@ -44,7 +43,6 @@ public class PluginiControl2iShell extends ishell.plugins.Plugin {
 		tabItem.setImage(IconTheme.lookup("network-wireless"));
 
 		final Composite container = this.getTabContainer(true);
-		container.setLayout(new FillLayout());
 
 		controller = new VController(this, container);
 		gateway = new Gateway(this);
@@ -64,6 +62,10 @@ public class PluginiControl2iShell extends ishell.plugins.Plugin {
 
 	@Override
 	public void shutdown() {
+		if (gateway != null)
+			gateway = null;
+		if (controller != null)
+			controller.killAll();
 	}
 
 	@Override

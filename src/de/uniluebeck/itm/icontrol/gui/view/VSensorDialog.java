@@ -40,9 +40,10 @@ public class VSensorDialog extends Dialog implements Listener{
 	private Button ok, cancel;
 	private Shell shell;
 	private Text text;
-	private boolean [] oldConfig, newConfig;
+	private boolean[] oldConfig;
+	private boolean[] newConfig;
 	private VController controller;
-	private final boolean activated = true;
+	private boolean activated = true;
 	private int oldTime;
 	private Gui gui;
 	private String lastAction = "none";
@@ -58,7 +59,7 @@ public class VSensorDialog extends Dialog implements Listener{
 	 */
 	public void open() {
 		oldConfig = controller.getDisplayedSensors();
-		newConfig = oldConfig;
+		newConfig = new boolean[oldConfig.length];
 		String[] sensorNames = controller.getAllSensorNames();
 		shell = new Shell(getParent(), getStyle());
 		shell.setText("Change sensor configuration!");
@@ -67,9 +68,6 @@ public class VSensorDialog extends Dialog implements Listener{
 		shell.setLayout(rowLayout2);
 		
 		Group group2 = new Group(shell, SWT.SHADOW_ETCHED_IN);
-//		RowLayout rowLayout3 = new RowLayout(SWT.VERTICAL);
-//		rowLayout3.fill = true;
-//		group2.setLayout(rowLayout3);
 		group2.setLayout(new GridLayout(1, false));
 		group2.setText("Set refresh time (in ms)");
 		text = new Text(group2, SWT.RIGHT | SWT.BORDER);
@@ -111,7 +109,6 @@ public class VSensorDialog extends Dialog implements Listener{
 					display.sleep();
 			}
 		}
-//		controller.setDisplayedSensors(newConfig);
 	}
 
 	@Override
@@ -167,15 +164,17 @@ public class VSensorDialog extends Dialog implements Listener{
 			System.out.println("Button ok");
 			gui.setTime(parse);
 			for (int i = 0; i < buttonList.size(); i++) {
-        		if (buttonList.get(i).getSelection())
-        			newConfig[i] = true;
-        		else
-        			newConfig[i] = false;
-        	}
-			if (!newConfig.equals(oldConfig))
+        		newConfig[i] = buttonList.get(i).getSelection();
+			}
+			boolean somethingChanged = false;
+			for (int i = 0; i < newConfig.length; i++)
+				if (oldConfig[i] != newConfig[i]) {
+					somethingChanged = true;
+					break;
+				}
+			if (somethingChanged)
 				controller.setDisplayedSensors(newConfig);
 		}
 		shell.dispose();
 	}
-	
 }

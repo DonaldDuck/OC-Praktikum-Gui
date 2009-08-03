@@ -88,6 +88,7 @@ public class VLinkStatusDisplay {
 	 */
 	public void refreshHealthIcon(int robotPosition, int health) {
 		healthIconList.get(robotPosition).setImage(linkStatusImages[health]);
+		container.redraw();
 		container.layout(true, true);
 	}
 	
@@ -104,6 +105,7 @@ public class VLinkStatusDisplay {
 			return;
 		for (int i = 0; i < linkStatus.length; i++)
 			this.linkStatusList.get(i).setText(linkStatus[i] + "%");
+		container.redraw();
 		container.layout(true, true);
 	}
 	
@@ -122,5 +124,7 @@ public class VLinkStatusDisplay {
 		label3.setImage(linkStatusImages[2]);
 		healthIconList.add(label3);
 		System.out.println("VLinkStatusDisplay: set " + robotId + "and other stuff by addRobot");
+		container.redraw();
+		container.layout(true, true);
 	}
 }

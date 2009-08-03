@@ -63,7 +63,9 @@ public class VAllRobotsTaskDialog extends Dialog implements Listener {
 		shell.setLayout(rowLayout2);
 		
 		Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
-		group.setLayout(new RowLayout(SWT.VERTICAL));
+		RowLayout rowLayout3 = new RowLayout(SWT.VERTICAL);
+		rowLayout3.wrap = true;
+		group.setLayout(rowLayout3);
 		group.setText("Choose robots!");
 		buttonList = new LinkedList<Button>();
 		

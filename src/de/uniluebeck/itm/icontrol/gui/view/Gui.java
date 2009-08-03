@@ -20,7 +20,7 @@ import java.util.LinkedList;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
-import org.eclipse.swt.custom.ScrolledComposite;
+//import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
@@ -43,9 +43,6 @@ import de.uniluebeck.itm.icontrol.gui.controller.VController;
 public class Gui implements Listener, SelectionListener {
 	private VController controller;
 	private Composite container, features, linkStatus, parameters, sensors;
-	//
-	private Composite center;
-	//
 	private Combo combo;
 	private CLabel name, text;
 	private Group controlGroup, featuresGroup, linkStatusGroup, parametersGroup, sensorGroup;
@@ -54,7 +51,7 @@ public class Gui implements Listener, SelectionListener {
 	private LinkedList<VSensorDisplay> sensorDisplayList;
 	private Button taskButton, taskForButton, searchButton, dialogButton, showMeButton;
 	private int selectedFeature = -1;
-	private ScrolledComposite scroll, featureScroll, sensorScroll, statusScroll;
+//	private ScrolledComposite featureScroll, sensorScroll, statusScroll;
 	private VBatteryDisplay battery;
 	private VLinkStatusDisplay linkStatusDisplay;
 	private int time = 500;
@@ -86,29 +83,20 @@ public class Gui implements Listener, SelectionListener {
 	 */
 	public void run() {
 		text.dispose();
-		container.setLayout(new GridLayout(1, false));
+		container.setLayout(new GridLayout(1, true));
 		Composite top = new Composite(container, SWT.NONE);
 		top.setLayout(new RowLayout());
-		//center.setLayout(new RowLayout(SWT.HORIZONTAL));
-		//remove private declaration
+		top.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
 		
-		Composite center2 = new Composite(container, SWT.NONE);
-		center2.setLayout(new GridLayout(1, false));
-		center2.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, true));
-		
-		scroll = new ScrolledComposite(center2, SWT.H_SCROLL | SWT.V_SCROLL);
-		scroll.setExpandHorizontal(true);
-		scroll.setExpandVertical(true);
-		
-		center = new Composite(scroll, SWT.NONE);
-		center.setLayout(new RowLayout(SWT.HORIZONTAL));
-		
-		scroll.setContent(center);
-		
+		Composite center = new Composite(container, SWT.NONE);
+		center.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		RowLayout layout = new RowLayout(SWT.HORIZONTAL);
+	    layout.wrap = false;
+	    center.setLayout(layout);
 		
 		Composite bottom = new Composite(container, SWT.NONE);
 		bottom.setLayout(new RowLayout());
-		bottom.setLayoutData(new GridData(SWT.RIGHT, SWT.BOTTOM, true, true, 1, 1));
+		bottom.setLayoutData(new GridData(SWT.END, SWT.END, false, false));
 		name = new CLabel(top, SWT.NONE);
 		name.setFont(new Font(top.getDisplay(), new FontData("Sans Serif", 18, SWT.BOLD)));
 		name.setForeground(new Color(null, 0x66, 0x66, 0x66));
@@ -118,18 +106,38 @@ public class Gui implements Listener, SelectionListener {
 		linkStatusGroup = new Group(center, SWT.SHADOW_ETCHED_IN);
 		linkStatusGroup.setText("Link Status and Health");
 		linkStatusGroup.setLayout(new RowLayout(SWT.VERTICAL));
+//		statusScroll = new ScrolledComposite(linkStatusGroup, SWT.H_SCROLL | SWT.V_SCROLL);
+//		statusScroll.setLayout(new GridLayout(1, true));
+//		Composite linkStatusFill = new Composite(statusScroll, SWT.NONE);
+//		linkStatusFill.setLayout(new GridLayout(1, true));
 		linkStatus = new Composite(linkStatusGroup, SWT.NONE);
+		linkStatus.setLayout(new GridLayout(3, false));
+//		linkStatus.setLayoutData(new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false));
+//		statusScroll.setExpandHorizontal(true);
+//		statusScroll.setExpandVertical(true);
+//		statusScroll.setContent(linkStatusGroup);
 		linkStatusDisplay = new VLinkStatusDisplay(linkStatus);
 
 		sensorGroup = new Group(center, SWT.SHADOW_ETCHED_IN);
 		sensorGroup.setText("Sensors");
-		sensorGroup.setLayout(new GridLayout(1, false));
+		sensorGroup.setLayout(new RowLayout(SWT.VERTICAL));
+//		sensorScroll = new ScrolledComposite(sensorGroup, SWT.H_SCROLL | SWT.V_SCROLL);
+//		sensorScroll.setLayout(new GridLayout(1, true));
+//		Composite sensorsFill = new Composite(sensorScroll, SWT.NONE);
+//		sensorsFill.setLayout(new GridLayout(1, true));
+////		sensorsFill.setLayoutData(new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false));
 		sensors = new Composite(sensorGroup, SWT.NONE);
+//		sensors.setLayout(new GridLayout(3, false));
+//		sensors.setLayoutData(new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false));
+//		sensorScroll.setExpandHorizontal(true);
+//		sensorScroll.setExpandVertical(true);
+//		sensorScroll.setContent(sensorsFill);
 
 		controlGroup = new Group(center, SWT.SHADOW_ETCHED_IN);
 		controlGroup.setText("Control");
 		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
 		rowLayout.fill = true;
+//		rowLayout.pack = true;
 		controlGroup.setLayout(rowLayout);
 		featuresGroup = new Group(controlGroup, SWT.SHADOW_ETCHED_IN);
 		featuresGroup.setText("Choose action:");
@@ -157,9 +165,22 @@ public class Gui implements Listener, SelectionListener {
 		taskButton.setText("Send Task!");
 		taskButton.addListener(SWT.Selection, this);
 		
-		//scrolling
-		scroll.setMinSize(center.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+//		updateScrolling(0);
 	}
+	
+	/**
+	 * Updates the given <code>scrolledComposite</code>
+	 * @param thatComposite
+	 * 		0: all <code>scrolledComposite</code>s
+	 * 		1: the link status and health <code>scrolledComposite</code>
+	 * 		2: the sensor <code>scrolledComposite</code>
+	 * 		3: the feature <code>scrolledComposite</code>
+	 */
+//	private void updateScrolling(int thatComposite) {
+//		statusScroll.setMinSize(linkStatus.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+//		sensorScroll.setMinSize(sensors.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+////		featureScroll.setMinSize(sensors.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+//	}
 
 	/**
 	 * Starts the timer, that refreshes the sensor's devolution.
@@ -229,7 +250,7 @@ public class Gui implements Listener, SelectionListener {
 			combo.select(0);
 			updateRobot(true);
 		}
-		scroll.setMinSize(center.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+//		updateScrolling(0);
 		container.layout(true, true);
 	}
 
@@ -249,7 +270,7 @@ public class Gui implements Listener, SelectionListener {
 		updateButtonList(controller.getAllFeaturesNames());
 		updateDisplayedSensors();
 		startSensorTimer();
-		scroll.setMinSize(center.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+//		updateScrolling(0);
 	}
 
 	/**
@@ -289,7 +310,10 @@ public class Gui implements Listener, SelectionListener {
 			this.features.dispose();
 		}
 		this.features = new Composite(featuresGroup, SWT.NONE);
-		this.features.setLayout(new RowLayout(SWT.VERTICAL));
+//		RowLayout featureLayout = new RowLayout(SWT.HORIZONTAL);
+//	    featureLayout.wrap = true;
+//	    featureLayout.pack = false;
+		this.features.setLayout(new GridLayout(2, true));
 		buttonList = new LinkedList<Button>();
 		for (int i = 0; i < features.length; i++) {
 			Button b = new Button(this.features, SWT.RADIO);
@@ -301,7 +325,7 @@ public class Gui implements Listener, SelectionListener {
 		}
 		selectedFeature = -1;
 		updateParameters(controller.getFeatureParameters(0), 0);
-		scroll.setMinSize(center.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+//		updateScrolling(0);
 		this.container.layout(true, true);
 	}
 
@@ -342,8 +366,8 @@ public class Gui implements Listener, SelectionListener {
 			CLabel label = new CLabel(this.parameters, SWT.NONE);
 			label.setText("There aren't any parameters!");
 		}
+//		updateScrolling(0);
 		controlGroup.redraw();
-		scroll.setMinSize(center.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		this.container.layout(true, true);
 	}
 
@@ -377,9 +401,9 @@ public class Gui implements Listener, SelectionListener {
 			}
 
 		}
+//		updateScrolling(0);
 		sensors.redraw();
 		container.layout(true, true);
-		scroll.setMinSize(center.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 	}
 
 	/**
@@ -447,7 +471,10 @@ public class Gui implements Listener, SelectionListener {
 				startSensorTimer();
 			} else if (source.equals(showMeButton)){
 				controller.showMeWhatYouGot();
-				controller.onAction((int)(Math.random()*10000), 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+				// Dummydata
+				//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//				controller.onAction((int)(Math.random()*10000), 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+				//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			} else if (source.equals(searchButton)) {
 				searchButton.dispose();
 				text = new CLabel(container, SWT.CENTER);
@@ -458,10 +485,10 @@ public class Gui implements Listener, SelectionListener {
 
 				// Testeingaben, damit man was zu klicken hat
 				// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-				 controller.onAction(123, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
-				 controller.onAction(124, 3, new String[] { "drive1", "gather1", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
-				 controller.onAction(125, 3, new String[] { "drive1", "gather2", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
-				 controller.onAction(126, 3, new String[] { "drive", "gather3", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+//				 controller.onAction(123, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+//				 controller.onAction(124, 3, new String[] { "drive1", "gather1", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+//				 controller.onAction(125, 3, new String[] { "drive1", "gather2", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+//				 controller.onAction(126, 3, new String[] { "drive", "gather3", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
 				// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			}
 		}
