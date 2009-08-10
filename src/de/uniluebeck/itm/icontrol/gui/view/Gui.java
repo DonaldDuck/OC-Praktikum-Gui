@@ -436,7 +436,7 @@ public class Gui implements Listener, SelectionListener {
 					}
 				} else if (textList.get(i).getText().length() > 2) {
 					if (textList.get(i).getText().substring(0, 3).equals("-0x")) {
-						textList.get(i).setText("-" + Integer.parseInt(textList.get(i).getText().substring(2), 16));
+						textList.get(i).setText("-" + Integer.parseInt(textList.get(i).getText().substring(3), 16));
 					}
 				}
 				parse = Integer.valueOf(textList.get(i).getText());
