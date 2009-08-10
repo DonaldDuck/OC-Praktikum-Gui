@@ -42,7 +42,7 @@ import de.uniluebeck.itm.icontrol.gui.controller.VController;
 
 public class Gui implements Listener, SelectionListener {
 	private VController controller;
-	private Composite container, features, linkStatus, parameters, sensors;
+	private Composite container, container2, features, linkStatus, parameters, sensors;
 	private Combo combo;
 	private CLabel name, text;
 	private Group controlGroup, featuresGroup, linkStatusGroup, parametersGroup, sensorGroup;
@@ -69,15 +69,19 @@ public class Gui implements Listener, SelectionListener {
 	 * message appears on the screen ,that tells you to wait.
 	 */
 	private void init() {
-		GridLayout layout = new GridLayout(1, true);
-		layout.verticalSpacing = 10;
 		container.setLayout(new GridLayout(1, true));
-		searchButton = new Button(container, SWT.PUSH);
+		container2 = new Composite(container, SWT.NONE);
+		RowLayout layout = new RowLayout(SWT.VERTICAL);
+		layout.justify = true;
+		layout.fill = true;
+		container2.setLayout(layout);
+		container2.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true));
+		searchButton = new Button(container2, SWT.PUSH);
 		searchButton.setText("Click for robot searching");
 		searchButton.addListener(SWT.Selection, this);
-		searchButton.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true));
-		text = new CLabel(container, SWT.CENTER);
-		text.setLayoutData(new GridData(SWT.CENTER, SWT.TOP, true, true));
+//		searchButton.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true));
+		text = new CLabel(container2, SWT.CENTER);
+//		text.setLayoutData(new GridData(SWT.CENTER, SWT.TOP, true, true));
 	}
 
 	/**
@@ -86,8 +90,7 @@ public class Gui implements Listener, SelectionListener {
 	 * before working --> if the first robot is added to the dropdown menu.
 	 */
 	public void run() {
-		searchButton.dispose();
-		this.text.dispose();
+		container2.dispose();
 		container.setLayout(new GridLayout(1, true));
 		Composite top = new Composite(container, SWT.NONE);
 		top.setLayout(new RowLayout());
