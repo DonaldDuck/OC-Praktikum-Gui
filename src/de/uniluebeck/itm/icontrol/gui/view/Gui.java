@@ -430,14 +430,10 @@ public class Gui implements Listener, SelectionListener {
 			try {
 				if (textList.get(i).getText().equals(""))
 					textList.get(i).setText("0");
-				else if (textList.get(i).getText().length() > 1) {
-					if (textList.get(i).getText().substring(0, 2).equals("0x")) {
-						textList.get(i).setText("" + Integer.parseInt(textList.get(i).getText().substring(2), 16));
-					}
-				} else if (textList.get(i).getText().length() > 2) {
-					if (textList.get(i).getText().substring(0, 3).equals("-0x")) {
-						textList.get(i).setText("-" + Integer.parseInt(textList.get(i).getText().substring(3), 16));
-					}
+				else if (textList.get(i).getText().length() > 1 && (textList.get(i).getText().substring(0, 2).equals("0x"))) {
+					textList.get(i).setText("" + Integer.parseInt(textList.get(i).getText().substring(2), 16));
+				} else if (textList.get(i).getText().length() > 2 && (textList.get(i).getText().substring(0, 3).equals("-0x"))) {
+					textList.get(i).setText("-" + Integer.parseInt(textList.get(i).getText().substring(3), 16));
 				}
 				parse = Integer.valueOf(textList.get(i).getText());
 				textList.get(i).setBackground(new Color(container.getDisplay(), 255, 255, 255));
