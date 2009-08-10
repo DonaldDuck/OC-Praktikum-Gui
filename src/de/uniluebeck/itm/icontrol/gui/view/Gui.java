@@ -69,11 +69,15 @@ public class Gui implements Listener, SelectionListener {
 	 * message appears on the screen ,that tells you to wait.
 	 */
 	private void init() {
-		container.setLayout(new GridLayout(3, false));
+		GridLayout layout = new GridLayout(1, true);
+		layout.verticalSpacing = 10;
+		container.setLayout(new GridLayout(1, true));
 		searchButton = new Button(container, SWT.PUSH);
 		searchButton.setText("Click for robot searching");
 		searchButton.addListener(SWT.Selection, this);
-		searchButton.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true, 1, 1));
+		searchButton.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true));
+		text = new CLabel(container, SWT.CENTER);
+		text.setLayoutData(new GridData(SWT.CENTER, SWT.TOP, true, true));
 	}
 
 	/**
@@ -82,7 +86,8 @@ public class Gui implements Listener, SelectionListener {
 	 * before working --> if the first robot is added to the dropdown menu.
 	 */
 	public void run() {
-		text.dispose();
+		searchButton.dispose();
+		this.text.dispose();
 		container.setLayout(new GridLayout(1, true));
 		Composite top = new Composite(container, SWT.NONE);
 		top.setLayout(new RowLayout());
@@ -476,10 +481,10 @@ public class Gui implements Listener, SelectionListener {
 //				controller.onAction((int)(Math.random()*10000), 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
 				//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			} else if (source.equals(searchButton)) {
-				searchButton.dispose();
-				text = new CLabel(container, SWT.CENTER);
-				text.setText("Please wait, \ncollecting robot data!");
-				text.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true, 1, 1));
+//				searchButton.dispose();
+				searchButton.setText("Click again for new search request!");
+				this.text.setText("Please wait, \ncollecting robot data!");
+				//this.text.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, true, true, 1, 1));
 				container.layout(true, true);
 				controller.showMeWhatYouGot();
 
