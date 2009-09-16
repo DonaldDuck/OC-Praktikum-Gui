@@ -160,8 +160,8 @@ public class VSensorDisplay {
 	 * got from the <code>VController</code>.
 	 */
 	public void update() {
-		update((int)((max - min) * Math.random()) + min);
-//		update(controller.getCurrentSensorValue(name));
+//		update((int)((max - min) * Math.random()) + min);
+		update(controller.getCurrentSensorValue(name));
 	}
 	
 	/**

@@ -123,9 +123,11 @@ public class Gateway implements Communication {
 			final int type = unsignedSingleByteToInt(message[0]);
 			switch (type) {
 				case (202):
+					System.out.println("202:" + new String(message) + "!");
 					onMessage(cutByteArray(message, 1, message.length));
 					break;
 				case (203):
+					System.out.println("203:" + new String(message) + "!");
 					checkMessageParts(cutByteArray(message, 1, message.length));
 					break;
 				default:
@@ -218,7 +220,12 @@ public class Gateway implements Communication {
 		// Decodes the name of the task
 		String taskName = "";
 		try {
-			taskName = new String(cutByteArray(message, valueLength * 2 + pos, message.length - 1), "US-ASCII");
+//			WORKAROUND
+			taskName = new String(cutByteArray(message, valueLength * 2 + pos, message.length - 2), "US-ASCII");
+//			ORIGINAL
+//			taskName = new String(cutByteArray(message, valueLength * 2 + pos, message.length - 1), "US-ASCII");
+//			System.out.println("Normal!" + taskName + "!");
+//			System.out.println("Gekürzt!" + new String(cutByteArray(message, valueLength * 2 + pos, message.length - 2), "US-ASCII") + "!");
 		} catch (final UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}

@@ -377,8 +377,6 @@ public class VController implements FeatureListener, MessageListener {
 				}
 			}
 		}
-		// if the list is empty, add the robot, else check if the robot already exists. If he exists
-		// ignore the given features, else add him.
 		else if (robotInList(robotId) == -1) {
 			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
 			linkStatus.addRobot(robotId);
@@ -452,6 +450,7 @@ public class VController implements FeatureListener, MessageListener {
 			// mach was mit der Nachricht und Sprechblase und so
 		} else if (taskName.contains("sensor_")) {
 			robotList.get(position).updateSensor(taskName.replaceFirst("^sensor_", ""), values[0]);
+			System.out.println(taskName + "!!" + valueLength + "!!");
 		} else if (taskName.equals("linkStatus")) {
 			if (values.length % 2 == 1) {
 				return;

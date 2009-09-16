@@ -187,11 +187,16 @@ public class VRobot {
 	 * @param currentValue the new value of that sensor
 	 */
 	public void updateSensor(String name, int currentValue) {
-		if (name.equals("battery") && containsBattery)
+		if (name.equals("battery") && containsBattery) {
 			battery.setCurrentValue(currentValue);
+			return;
+		}
 		int position = getSensorNumber(name);
 		if (position == -1) {
 			System.out.println("I don't know this sensor!");
+			System.out.println("I only now the following sensors:");
+			for (int i = 0; i < sensorList.size(); i++)
+				System.out.println("Sensor " + i + ": " + sensorList.get(i).getName() + "!");
 			return;
 		}
 		sensorList.get(position).setCurrentValue(currentValue);

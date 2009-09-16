@@ -63,6 +63,20 @@ public class Gui implements Listener, SelectionListener {
 
 		init();
 	}
+	
+	protected void test() {
+		Runnable timer2 = new Runnable() {
+			public void run() {
+//				controller.onMessage(123, "sensor_battery", 1, new int[]{(int)(Math.random()*101)});
+//				controller.onMessage(123, "sensor_left bumper", 1, new int[]{(int)(Math.random()*11)});
+//				controller.onMessage(123, "sensor_right bumper", 1, new int[]{(int)(Math.random()*101)});
+//				controller.onMessage(123, "linkStatus", 2, new int[]{124, (int)(Math.random()*101)});
+//				controller.onMessage(123, "healthStatus", 4, new int[]{123, (int)(Math.random()*3), 124, (int)(Math.random()*3)});
+				container.getDisplay().timerExec(50, this);
+			}
+		};
+	container.getDisplay().timerExec(50, timer2);
+	}
 
 	/**
 	 * This method creates first a single button for searching. After clicking a single centered
@@ -174,6 +188,7 @@ public class Gui implements Listener, SelectionListener {
 		taskButton.addListener(SWT.Selection, this);
 		
 //		updateScrolling(0);
+		test();
 	}
 	
 	/**
@@ -198,9 +213,9 @@ public class Gui implements Listener, SelectionListener {
 			timer = new Runnable() {
 				public void run() {
 					if (controller.getContainsBattery()) {
-						battery.update((int) (101 * Math.random()));
+//						battery.update((int) (101 * Math.random()));
+						battery.update(controller.getCurrentSensorValue("battery"));
 					}
-					// battery.update(controller.getCurrentSensorValue("battery"));
 					if (!sensorDisplayList.isEmpty()) {
 						for (VSensorDisplay sensor : sensorDisplayList) {
 							sensor.update();
