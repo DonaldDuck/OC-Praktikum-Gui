@@ -103,8 +103,10 @@ public class VLinkStatusDisplay {
 	public void refreshLinkStatus(int[] linkStatus) {
 		if (linkStatus.length > this.linkStatusList.size() || linkStatus == null)
 			return;
-		for (int i = 0; i < linkStatus.length; i++)
-			this.linkStatusList.get(i).setText(linkStatus[i] + "%");
+		for (int i = 0; i < linkStatus.length; i++) {
+			if (linkStatus[i] != -1)
+				this.linkStatusList.get(i).setText(linkStatus[i] + "%");
+		}
 		container.redraw();
 		container.layout(true, true);
 	}
@@ -123,7 +125,6 @@ public class VLinkStatusDisplay {
 		CLabel label3 = new CLabel(container, SWT.NONE);
 		label3.setImage(linkStatusImages[2]);
 		healthIconList.add(label3);
-		System.out.println("VLinkStatusDisplay: set " + robotId + "and other stuff by addRobot");
 		container.redraw();
 		container.layout(true, true);
 	}

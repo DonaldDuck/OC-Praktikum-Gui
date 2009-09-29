@@ -239,17 +239,13 @@ public class VController implements FeatureListener, MessageListener {
 	 *            the given parameters
 	 */
 	public void doTask(String taskName, int[] parameters) {
-		System.out.println("ausgelesenes doTask: ");
-		System.out.println("task: " + taskName);
-		System.out.println("parameters: [");
-		for (int i = 0; i < parameters.length; i++) {
-			if (i == 0) {
-				System.out.print(parameters[i] + "");
-			} else {
-				System.out.print(", " + parameters[i]);
-			}
-		}
-		System.out.print("]");
+//		for (int i = 0; i < parameters.length; i++) {
+//			if (i == 0) {
+//				System.out.print(parameters[i] + "");
+//			} else {
+//				System.out.print(", " + parameters[i]);
+//			}
+//		}
 		control.getGateway().doTask(robotList.get(robotInList(displayedRobot)).getId(), taskName, parameters.length, parameters);
 	}
 	
@@ -320,7 +316,6 @@ public class VController implements FeatureListener, MessageListener {
 	public void setDisplayedSensors(boolean[] displayedSensors) {
 		robotList.get(robotInList(displayedRobot)).setDisplayedSensors(displayedSensors);
 		if (Display.getCurrent() != null) {
-			System.out.println("update displayed sensors");
 			gui.updateDisplayedSensors();
 		} else {
 			if (!display.isDisposed()) {
@@ -348,22 +343,17 @@ public class VController implements FeatureListener, MessageListener {
 	@Override
 	public synchronized void onAction(int robotId, int taskListLength, String[] taskList, int[] paramListLength,
 			String[][] paramList, int sensorLength, String[] sensors, int[] sensorRange) {
-		System.out.println("onAction");
 		if (robotId < 0) {
 			robotId = robotId * -1;
 		}
 		if (robotList.isEmpty()) {
-			System.out.println("empty");
 			robotList.add(new VRobot(robotId, taskListLength, taskList, paramListLength, paramList, sensorLength, sensors, sensorRange));
 			for (int i = 0; i < paramList.length; i++) {
 				print(paramList[i]);
 			}
-			System.out.println("added to list");
 			linkStatus.addRobot(robotId);
 			if (Display.getCurrent() != null) {
-				System.out.println("start gui");
 				gui.run();
-				// gui.updateLinkStatus(linkStatus.getLinkStatus(displayedRobot));
 			} else {
 				if (!display.isDisposed()) {
 					display.asyncExec(new Runnable() {
@@ -383,7 +373,6 @@ public class VController implements FeatureListener, MessageListener {
 		} else {
 			return;
 		}
-		System.out.println("call gotnewrobot");
 		if (Display.getCurrent() != null) {
 			gui.gotNewRobot(getAllRobotNames());
 		} else {
@@ -398,7 +387,6 @@ public class VController implements FeatureListener, MessageListener {
 				});
 			}
 		}
-		System.out.println("done");
 	}
 
 	private void print(String[] paramList) {
@@ -424,7 +412,6 @@ public class VController implements FeatureListener, MessageListener {
 			for (int i = 0; i < values.length / 2; i++) {
 				linkStatus.setHealth(values[2 * i], values[2 * i + 1]);
 			}
-			System.out.println("healthStatus set!");
 			if (Display.getCurrent() != null) {
 				gui.updateHealthStatus(linkStatus.getHealth());
 			} else {
@@ -450,7 +437,6 @@ public class VController implements FeatureListener, MessageListener {
 			// mach was mit der Nachricht und Sprechblase und so
 		} else if (taskName.contains("sensor_")) {
 			robotList.get(position).updateSensor(taskName.replaceFirst("^sensor_", ""), values[0]);
-			System.out.println(taskName + "!!" + valueLength + "!!");
 		} else if (taskName.equals("linkStatus")) {
 			if (values.length % 2 == 1) {
 				return;

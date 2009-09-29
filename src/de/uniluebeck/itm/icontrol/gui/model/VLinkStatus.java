@@ -80,8 +80,9 @@ public class VLinkStatus {
 	public void setLinkStatus(int robotId, int robotId2, int linkStatus) {
 		int i = robotPosition(robotId);
 		int j = robotPosition(robotId2);
-		if (i == -1 || j == -1)
+		if (i == -1 || j == -1) {
 			return;
+		}
 		this.linkStatus.get(i).set(j, new Integer(linkStatus));
 		this.linkStatus.get(j).set(i, new Integer(linkStatus));
 	}

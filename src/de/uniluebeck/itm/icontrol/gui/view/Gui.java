@@ -67,11 +67,15 @@ public class Gui implements Listener, SelectionListener {
 	protected void test() {
 		Runnable timer2 = new Runnable() {
 			public void run() {
-//				controller.onMessage(123, "sensor_battery", 1, new int[]{(int)(Math.random()*101)});
-//				controller.onMessage(123, "sensor_left bumper", 1, new int[]{(int)(Math.random()*11)});
-//				controller.onMessage(123, "sensor_right bumper", 1, new int[]{(int)(Math.random()*101)});
-//				controller.onMessage(123, "linkStatus", 2, new int[]{124, (int)(Math.random()*101)});
-//				controller.onMessage(123, "healthStatus", 4, new int[]{123, (int)(Math.random()*3), 124, (int)(Math.random()*3)});
+				controller.onMessage(1234, "sensor_battery", 1, new int[]{(int)(Math.random()*101)});
+				controller.onMessage(1234, "sensor_left bumper", 1, new int[]{(int)(Math.random()*2)});
+				controller.onMessage(1234, "sensor_right bumper", 1, new int[]{(int)(Math.random()*2)});
+				controller.onMessage(1234, "linkStatus", 2, new int[]{1244, (int)(Math.random()*101)});
+				controller.onMessage(1234, "healthStatus", 4, new int[]{1234, (int)(Math.random()*3), 1244, (int)(Math.random()*3)});
+				controller.onMessage(1234, "linkStatus", 2, new int[]{1254, (int)(Math.random()*101)});
+				controller.onMessage(1234, "healthStatus", 4, new int[]{1234, (int)(Math.random()*3), 1254, (int)(Math.random()*3)});
+				controller.onMessage(1234, "linkStatus", 2, new int[]{1264, (int)(Math.random()*101)});
+				controller.onMessage(1234, "healthStatus", 4, new int[]{1234, (int)(Math.random()*3), 1264, (int)(Math.random()*3)});
 				container.getDisplay().timerExec(50, this);
 			}
 		};
@@ -188,7 +192,7 @@ public class Gui implements Listener, SelectionListener {
 		taskButton.addListener(SWT.Selection, this);
 		
 //		updateScrolling(0);
-		test();
+//		test();
 	}
 	
 	/**
@@ -513,10 +517,10 @@ public class Gui implements Listener, SelectionListener {
 
 				// Testeingaben, damit man was zu klicken hat
 				// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//				 controller.onAction(123, 3, new String[] { "drive", "gather", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
-//				 controller.onAction(124, 3, new String[] { "drive1", "gather1", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
-//				 controller.onAction(125, 3, new String[] { "drive1", "gather2", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
-//				 controller.onAction(126, 3, new String[] { "drive", "gather3", "spread" }, new int[] { 2, 3, 0 }, new String[][] {{ "direction", "distance" }, {"llllllllllllllllllllllllll", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaa"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 10, 0, 100});
+				 controller.onAction(1234, 3, new String[] { "function1", "function2", "function3" }, new int[] { 2, 3, 0 }, new String[][] {{ "parameter1", "parameter2" }, {"parameter1", "parameter2", "parameter3"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 1, 0, 1});
+				 controller.onAction(1244, 3, new String[] { "function1", "function2", "function3" }, new int[] { 2, 3, 0 }, new String[][] {{ "parameter1", "parameter2" }, {"parameter1", "parameter2", "parameter3"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 1, 0, 1});
+				 controller.onAction(1254, 3, new String[] { "function1", "function2", "function3" }, new int[] { 2, 3, 0 }, new String[][] {{ "parameter1", "parameter2" }, {"parameter1", "parameter2", "parameter3"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 1, 0, 1});
+				 controller.onAction(1264, 3, new String[] { "function1", "function6", "function3" }, new int[] { 2, 3, 0 }, new String[][] {{ "parameter1", "parameter2" }, {"parameter1", "parameter2", "parameter3"}, {} }, 3, new String[]{"battery", "left bumper", "right bumper"}, new int[]{0, 100, 0, 1, 0, 1});
 				// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			}
 		}
